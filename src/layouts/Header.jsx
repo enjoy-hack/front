@@ -9,11 +9,15 @@ function Header() {
     <header className="w-full bg-blue-600 py-2 px-6">
       <div className="flex justify-between items-center">
         {/* 왼쪽 로고 */}
-        <Logo className="w-8 h-8" />
+        <Link to="/">
+          <Logo className="w-8 h-8" />
+        </Link>
 
         {/* 오른쪽 아이콘들 */}
         <div className="flex items-center gap-8">
-          <TrackIcon className="w-5 h-5" />
+        <Link to="/track">
+            <TrackIcon className="w-5 h-5" />
+        </Link>
           <SearchIcon className="w-5 h-5" />
           <MypageIcon className="w-5 h-5" />
         </div>

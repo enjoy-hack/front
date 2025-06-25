@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
+import TrackInfo from './pages/TrackInfo';
 import NotFound from './pages/NotFound';
 import Header from './layouts/Header';
 import Footer from './layouts/Footer';
@@ -15,7 +16,7 @@ function App() {
 
 function AppContent() {
   const location = useLocation();
-  const hiddenRoutes = ['/Login'];
+  const hiddenRoutes = ['/login'];
   const shouldHideHeaderFooter = hiddenRoutes.includes(location.pathname);
 
   return (
@@ -23,7 +24,8 @@ function AppContent() {
       {!shouldHideHeaderFooter && <Header />}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Login" element={<Login />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/track" element={<TrackInfo />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       {!shouldHideHeaderFooter && <Footer />}

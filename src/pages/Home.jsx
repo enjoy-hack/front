@@ -28,7 +28,7 @@ const Home = () => {
                 {/* 이 div가 탭과 리스트를 감싸며, 너비는 내용물에 따라 자동 조절됩니다. */}
                 <div>
                    <TrackTabs tabs={TABS} activeTab={activeTab} onChange={setActiveTab} />
-      <CourseList activeTrack={activeTab} />
+                   <CourseList activeTrack={activeTab} />
                 </div>
             </div>
 
