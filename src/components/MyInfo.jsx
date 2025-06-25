@@ -6,8 +6,8 @@ const MyInfo = () => {
   const studentName = useUserStore((state) => state.studentName);
   const studentId = useUserStore((state) => state.studentId);
   const studentMajor = useUserStore((state) => state.studentMajor);
-  const studentTrack = useUserStore((state) => state.studentTrack);
-  const studentCompleted = useUserStore((state) => state.studentCompleted);
+  // const studentTrack = useUserStore((state) => state.studentTrack);
+  // const studentCompleted = useUserStore((state) => state.studentCompleted);
 
   return (
     <div className="bg-white p-10 rounded-xl max-w-4xl w-full mx-auto">
@@ -17,8 +17,8 @@ const MyInfo = () => {
           <InfoLabel text="이름" />
           <InfoLabel text="학번" />
           <InfoLabel text="학과" />
-          <InfoLabel text="관심 트랙" />
-          <InfoLabel text="이수 완료" />
+          {/* <InfoLabel text="관심 트랙" />
+          <InfoLabel text="이수 완료" /> */}
         </div>
 
         {/* 오른쪽: 텍스트 + Chip */}
@@ -26,12 +26,12 @@ const MyInfo = () => {
           <div className="pt-1">{studentName}</div>
           <div className="pt-1">{studentId}</div>
           <div className="pt-1">{studentMajor}</div>
-          <div className="flex gap-1">
+          {/* <div className="flex gap-1">
             <Chip label={studentTrack} />
           </div>
           <div className="flex gap-1">
             <Chip label={studentCompleted} />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

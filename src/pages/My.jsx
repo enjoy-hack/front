@@ -7,9 +7,10 @@ import TrackStatusLarge from '../components/TrackStatusLarge';
 import useUserStore from '../stores/useUserStore';
 import TrackInitButton from '../components/TrackInitButton';
 import Button from '../components/Button';
+import TrackLoadMap from '../assets/TrackLoadMap.svg?react';
 import {
   getRecommendTrackByProgress,
-  getRecommendTrackByInterest
+  getRecommendTrackByInterest,
 } from '../services/trackRecommendService';
 
 const MyPage = () => {
@@ -26,7 +27,7 @@ const MyPage = () => {
       setLoading(true);
       const [progressRes, interestRes] = await Promise.all([
         getRecommendTrackByProgress(studentId),
-        getRecommendTrackByInterest(studentId)
+        getRecommendTrackByInterest(studentId),
       ]);
       console.log('이수율 기반 추천:', progressRes);
       console.log('관심 기반 추천:', interestRes);
@@ -64,26 +65,33 @@ const MyPage = () => {
       </div> */}
 
       <div className="flex justify-center mb-4">
-  {!progressResult && !interestResult ? (
-    <TrackInitButton onClick={handleSubmit} disabled={loading} />
-  ) : (
-    <div className="text-center text-[#0259DD] font-semibold text-lg">
-      추천 트랙을 확인해보세요!
-    </div>
-  )}
-</div>
+        {!progressResult && !interestResult ? (
+          <TrackInitButton onClick={handleSubmit} disabled={loading} />
+        ) : (
+          <div className="text-center text-[#0259DD] font-semibold text-lg">
+            추천 트랙을 확인해보세요!
+          </div>
+        )}
+      </div>
 
       <div className="flex flex-col items-center gap-2 text-base font-medium">
         {progressResult?.trackName && (
           <div>
-            🧠 이수율 기반 추천: <span className="text-black">{progressResult.trackName}</span>
+            🧠 이수율 기반 추천:{' '}
+            <span className="text-black">{progressResult.trackName}</span>
           </div>
         )}
         {interestResult?.trackName && (
           <div>
-            🌟 관심 기반 추천: <span className="text-black">{interestResult.trackName}</span>
+            🌟 관심 기반 추천:{' '}
+            <span className="text-black">{interestResult.trackName}</span>
           </div>
         )}
+      </div>
+
+      {/* 로드맵 SVG 표시 */}
+      <div className="mt-25 flex justify-center">
+        <TrackLoadMap className="w-full max-w-[1000px] h-auto" />
       </div>
 
       {/* 추천 결과 출력 */}
