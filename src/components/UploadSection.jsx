@@ -1,8 +1,10 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import TrackStatusLarge from './TrackStatusLarge';
 import Chip from './Chip';
 import Button from './Button';
 import DeleteIcon from '../assets/delete.svg';
+import { uploadStudentExcel } from '../services/userDataService';
+import useTrackStore from '../stores/useTrackStore';
 
 const UploadSection = ({ onClose }) => {
   const fileInputRef = useRef(null);
@@ -16,6 +18,23 @@ const UploadSection = ({ onClose }) => {
     const file = e.target.files[0];
     if (file) setSelectedFile(file);
   };
+
+  const handleUpload = async () => {
+  if (!selectedFile) {
+    alert('엑셀 파일을 먼저 선택해주세요.');
+    return;
+  }
+
+  try {
+    const result = await uploadStudentExcel(selectedFile);
+    console.log(result);
+    useTrackStore.getState().setTrackData(result);
+    alert('업로드 성공!');
+    onClose(); // 업로드 완료 후 모달 닫기
+  } catch (err) {
+    alert(`업로드 실패: ${err.message}`);
+  }
+};
 
   return (
     <div className="w-full max-w-lg bg-white rounded-2xl shadow-xl p-8 relative text-center">
@@ -55,7 +74,7 @@ const UploadSection = ({ onClose }) => {
           onChange={handleFileChange}
         />
         <Button label="파일 선택" onClick={handleFileClick} variant="file" />
-        <Button label="업로드" onClick={() => alert('업로드 기능 준비 중')} />
+        <Button label="업로드" onClick={handleUpload} />
         {selectedFile && (
           <p className="text-xs text-gray-500">{selectedFile.name}</p>
         )}

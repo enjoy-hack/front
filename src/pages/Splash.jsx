@@ -10,6 +10,7 @@ import DeleteIcon from '../assets/delete.svg';
 const Splash = () => {
   const [step, setStep] = useState(1);
   const [showUpload, setShowUpload] = useState(false);
+  const handleCloseUpload = () => setShowUpload(false);
 
   useEffect(() => {
     const timer1 = setTimeout(() => setStep(2), 2000);
@@ -25,8 +26,10 @@ const Splash = () => {
     <div className="w-full min-h-screen bg-white relative overflow-hidden">
       {/* ✅ 업로드 팝업 */}
       {showUpload && (
-        <div className="fixed inset-0 bg-black bg-opacity-30 flex justify-center items-center z-50">
-          <UploadSection onClose={() => setShowUpload(false)} />
+        <div className="fixed inset-0 bg-black/80 flex justify-center items-center z-50" onClick={handleCloseUpload}>
+         <div onClick={(e) => e.stopPropagation()}>
+            <UploadSection onClose={handleCloseUpload} />
+         </div>
         </div>
       )}
 
@@ -56,7 +59,7 @@ const Splash = () => {
             {/* <TrackDetailCard /> */}
 
             {/* 하단 안내 문구 */}
-            <div className="mt-32">
+            <div className="mt-32 mb-16">
               <TrackStatusCard
                 title="사용자님께 가장 적합한 트랙을 알아볼까요?"
                 subtitle="저를 눌러 수강이력을 업로드 해주세요."
