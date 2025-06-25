@@ -6,10 +6,24 @@ import TrackStatusLarge from '../components/TrackStatusLarge';
 import TrackIntroTop from '../components/TrackIntroTop';
 import UploadSection from '../components/UploadSection';
 import DeleteIcon from '../assets/delete.svg';
+import InfoList from '../components/InfoList';
+import TrackTabs from '../components/TrackTabs';
+
+const TABS = [
+  '인공지능시스템',
+  '메타버스 플랫폼',
+  '클라우드 컴퓨팅',
+  '공간비주얼 SW',
+  '인터렉티브 플랫폼',
+  '지능형에이전트',
+  'AI 콘텐츠',
+  '데이터인텔리전스',
+];
 
 const Splash = () => {
   const [step, setStep] = useState(1);
   const [showUpload, setShowUpload] = useState(false);
+  const [activeTab, setActiveTab] = useState(TABS[0]);
   const handleCloseUpload = () => setShowUpload(false);
 
   useEffect(() => {
@@ -26,10 +40,13 @@ const Splash = () => {
     <div className="w-full min-h-screen bg-white relative overflow-hidden">
       {/* ✅ 업로드 팝업 */}
       {showUpload && (
-        <div className="fixed inset-0 bg-black/80 flex justify-center items-center z-50" onClick={handleCloseUpload}>
-         <div onClick={(e) => e.stopPropagation()}>
+        <div
+          className="fixed inset-0 bg-black/80 flex justify-center items-center z-50"
+          onClick={handleCloseUpload}
+        >
+          <div onClick={(e) => e.stopPropagation()}>
             <UploadSection onClose={handleCloseUpload} />
-         </div>
+          </div>
         </div>
       )}
 
@@ -51,15 +68,21 @@ const Splash = () => {
               <TrackStatusLarge title="먼저 ‘트랙제’에 대해서 알아볼까요?" />
             </div>
 
-            <div className="mt-35 w-full">
+            <div className="mt-25 mb-10 w-full">
               <TrackIntroTop />
             </div>
 
-            {/* 🔧 나중에 추가할 컴포넌트 위치 */}
-            {/* <TrackDetailCard /> */}
+            <div className="w-full max-w-[1200px] text-center mt-10">
+              <TrackTabs
+                tabs={TABS}
+                activeTab={activeTab}
+                onChange={setActiveTab}
+              />
+              <InfoList />
+            </div>
 
             {/* 하단 안내 문구 */}
-            <div className="mt-32 mb-16">
+            <div className="mt-20 mb-16">
               <TrackStatusCard
                 title="사용자님께 가장 적합한 트랙을 알아볼까요?"
                 subtitle="저를 눌러 수강이력을 업로드 해주세요."
