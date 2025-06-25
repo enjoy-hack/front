@@ -1,11 +1,8 @@
-import { useState } from 'react';
+const MYTABS = [ '내 정보', '관심 트랙 설정'];
 
-const MYTABS = [ '내 정보', '핵심 트랙 설정'];
-
-const MyTabs = ({ }) => {
-    const [activeTab, setActiveTab] = useState(MYTABS[0]);
+const MyTabs = ({ activeTab, setActiveTab }) => {
     return (
-          <div className="flex flex-wrap justify-center gap-16 relative">
+          <div className="flex flex-wrap justify-center gap-56 relative">
             {MYTABS.map((tab) => {
         const isActive = activeTab === tab;
         return (
