@@ -17,7 +17,7 @@ const MyInfo = () => {
           <InfoLabel text="이름" />
           <InfoLabel text="학번" />
           <InfoLabel text="학과" />
-          <InfoLabel text="핵심 트랙" />
+          <InfoLabel text="관심 트랙" />
           <InfoLabel text="이수 완료" />
         </div>
 
