@@ -1,7 +1,7 @@
 import React from 'react';
 import LogoCharacter from '../assets/logo-character.svg?react'; // svg를 컴포넌트로 import
 
-const TrackStatusCard = ({ title, subtitle }) => {
+const TrackStatusCard = ({ title, subtitle, onClickCharacter }) => {
   return (
     <div className="text-center">
       {/* 제목 */}
@@ -11,7 +11,9 @@ const TrackStatusCard = ({ title, subtitle }) => {
 
       {/* 캐릭터 */}
       <div className="flex justify-center mb-2">
-        <LogoCharacter className="w-28 h-auto" />
+        <button onClick={onClickCharacter}>
+          <LogoCharacter className="w-28 h-auto" />
+        </button>
       </div>
 
       {/* 부제목 */}

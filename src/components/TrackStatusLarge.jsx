@@ -11,7 +11,10 @@ const TrackStatusLarge = ({ title }) => {
 
       {/* 제목 (아래에 위치) */}
       {title && (
-        <h2 className="text-2xl font-semibold text-blue-600 mb-2">{title}</h2>
+        <h2
+          className="text-2xl font-semibold text-blue-600 mb-2 leading-relaxed"
+          dangerouslySetInnerHTML={{ __html: title }}
+        />
       )}
     </div>
   );
