@@ -4,6 +4,7 @@ import Button from '../components/Button';
 import Character from '../components/Character';
 import { loginWithSejongPortal } from '../services/userService'; // 포털 API 호출 함수
 import { useNavigate } from 'react-router-dom'; // 리다이렉션을 위한 훅
+import useUserStore from '../stores/useUserStore';
 
 function Login() {
   const [id, setId] = useState('');
@@ -18,7 +19,9 @@ function Login() {
 
    try {
       const userData = await loginWithSejongPortal(id, pw);
-        console.log(typeof id, typeof pw);
+      useUserStore.getState().setStudentId(userData.studentIdString);
+      useUserStore.getState().setStudentName(userData.studentName);
+      useUserStore.getState().setMajor(userData.major);
       console.log('로그인 성공:', userData);
       alert(`${userData.studentName}님 환영합니다!`);
 
