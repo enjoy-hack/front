@@ -1,10 +1,12 @@
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
-import Login from './pages/Login';
 import TrackInfo from './pages/TrackInfo';
 import NotFound from './pages/NotFound';
+import Search from './pages/Search';
 import Header from './layouts/Header';
 import Footer from './layouts/Footer';
+import Login from './pages/Login';
+import MyPage from './pages/My';
 
 function App() {
   return (
@@ -23,9 +25,12 @@ function AppContent() {
     <div className="flex flex-col min-h-screen">
       {!shouldHideHeaderFooter && <Header />}
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Navigate to="/login" replace />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/track" element={<TrackInfo />} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/mypage" element={<MyPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       {!shouldHideHeaderFooter && <Footer />}
