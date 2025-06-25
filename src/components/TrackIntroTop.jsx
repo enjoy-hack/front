@@ -10,11 +10,7 @@ function TrackIntroTop() {
       </div>
 
       {/* 제목 */}
-<<<<<<< Updated upstream
-      <h1 className="text-2xl font-semibold text-[#0056E1] mb-6 leading-relaxed">
-=======
       <h1 className="text-2xl font-semibold text-blue-600 mb-6">
->>>>>>> Stashed changes
         안녕하세요! 사용자님
         <br />
         ‘트랙제’에 대해 알아볼까요?
