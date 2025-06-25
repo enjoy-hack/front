@@ -5,6 +5,7 @@ import TrackInfo from './pages/TrackInfo';
 import NotFound from './pages/NotFound';
 import Header from './layouts/Header';
 import Footer from './layouts/Footer';
+import Splash from './pages/Splash';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
 
 function AppContent() {
   const location = useLocation();
-  const hiddenRoutes = ['/login'];
+  const hiddenRoutes = ['/login', '/splash'];
   const shouldHideHeaderFooter = hiddenRoutes.includes(location.pathname);
 
   return (
@@ -25,6 +26,7 @@ function AppContent() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/splash" element={<Splash />} />
         <Route path="/track" element={<TrackInfo />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
