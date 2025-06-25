@@ -1,18 +1,21 @@
 import { create } from 'zustand';
 
 const useUserStore = create((set) => ({
-  major: null,
+  studentmajor: null,
   studentId: null,
   studentName: null,
+  studentTrack: null,
+  studentCompleted: null,
   hasLoginHistory: false,
   hasUploadedHistory: false,
-
+  setMajor: (major) => set({ studentmajor: major }),
   setStudentId: (id) => set({ studentId: id }),
   setStudentName: (name) => set({ studentName: name }),
-  setMajor: (major) => set({ major }),
+  setTrack: (track) => set({ studentTrack: track }),
+  setCompleted: (completed) => set({ studentCompleted: completed }),
   setHasLoginHistory: (hasLoginHistory) => set({ hasLoginHistory }),
   setHasUploadedHistory: (hasUploadedHistory) => set({ hasUploadedHistory }),
-  reset: () => set({ studentId: null, studentName: null, major: null }),
+  
 }));
 
 export default useUserStore;
