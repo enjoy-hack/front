@@ -18,6 +18,14 @@ const TrackInfo = () => {
   const [activeTab, setActiveTab] = useState(TABS[0]);
 
   return (
+// <<<<<<< feat/userapi
+//     <div className="p-8 text-center">
+//       <div className="w-full mx-auto flex justify-center">
+//         <div>
+//         {/* <TrackIntroTop /> */}
+//         <TrackTabs tabs={TABS} activeTab={activeTab} onChange={setActiveTab} />
+//       <InfoList />
+// =======
     <div className="p-8 flex justify-center">
       <div className="w-full max-w-[1200px] text-center">
         <div className="mb-16">
