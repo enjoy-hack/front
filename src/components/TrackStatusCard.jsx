@@ -6,11 +6,11 @@ const TrackStatusCard = ({ title, subtitle, onClickCharacter }) => {
     <div className="text-center">
       {/* 제목 */}
       {title && (
-        <h2 className="text-xl font-semibold text-blue-600 mb-2">{title}</h2>
+        <h2 className="text-xl font-semibold text-blue-600 mt-16 mb-8">{title}</h2>
       )}
 
       {/* 캐릭터 */}
-      <div className="flex justify-center mb-2">
+      <div className="flex justify-center mb-8">
         <button onClick={onClickCharacter}>
           <LogoCharacter className="w-28 h-auto" />
         </button>

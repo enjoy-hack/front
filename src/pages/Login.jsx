@@ -24,9 +24,14 @@ function Login() {
       useUserStore.getState().setMajor(userData.major);
       console.log('로그인 성공:', userData);
       alert(`${userData.studentName}님 환영합니다!`);
-
+      if (userData.hasLoginHistory) {
+        useUserStore.getState().setHasLoginHistory(true);
+        navigate('/home'); // 필요시 리다이렉션
+      } else {
+        navigate('/splash'); // 처음 로그인 시 스플래시 페이지로 이동
+      }
       // localStorage.setItem('studentInfo', JSON.stringify(userData));
-      navigate('/home'); // 필요시 리다이렉션
+
     } catch (err) {
       console.error(err);
       setError('포털 아이디 혹은 비밀번호가 잘못되었습니다.');
