@@ -1,4 +1,5 @@
 import InfoList from "../components/InfoList";
+import TrackIntroTop from "../components/TrackIntroTop";
 import TrackTabs from "../components/TrackTabs";
 import { useState } from "react";
 
@@ -15,6 +16,7 @@ const [activeTab, setActiveTab] = useState(TABS[0]);
     <div className="p-8 text-center">
       <div className="w-full mx-auto flex justify-center">
         <div>
+        {/* <TrackIntroTop /> */}
         <TrackTabs tabs={TABS} activeTab={activeTab} onChange={setActiveTab} />
       <InfoList />
         </div>

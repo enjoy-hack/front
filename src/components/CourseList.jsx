@@ -18,7 +18,7 @@ const CourseList = ({ activeTrack }) => {
     return (
         <div className="w-full bg-[#0259DD] rounded-bl-lg rounded-br-lg p-6 flex flex-col items-center -mt-1 z-0 relative">
             <div className="w-full flex justify-between items-center mb-4">
-               <TrackHeader completedCount={1} total={6} hasData={true} />
+               <TrackHeader completedCount={3} total={6} hasData={true} />
             </div>
 
 {/* <div className="grid grid-cols-6 gap-2 text-sm text-white font-medium px-4 mb-2">
