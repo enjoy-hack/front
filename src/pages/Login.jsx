@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Input from '../components/Input';
 import Button from '../components/Button';
-import Avatar from '../components/Avatar';
+import Character from '../components/Character';
 
 function LoginPage() {
   const [id, setId] = useState('');
@@ -49,7 +49,7 @@ function LoginPage() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-white px-4">
       <div className="w-full max-w-sm flex flex-col items-center space-y-10">
-        <Avatar />
+        <Character />
         <div className="w-full space-y-4">
           <Input
             type="text"
