@@ -10,7 +10,7 @@ function TrackIntroTop() {
       </div>
 
       {/* 제목 */}
-      <h1 className="text-2xl font-semibold text-[#0056E1] mb-6 leading-relaxed">
+      <h1 className="text-2xl font-semibold text-blue-600 mb-6">
         안녕하세요! 사용자님
         <br />
         ‘트랙제’에 대해 알아볼까요?
@@ -21,7 +21,7 @@ function TrackIntroTop() {
         전공 트랙 제도는 인공지능융합대학 소속 세 학과(컴퓨터공학과,
         콘텐츠소프트웨어학과, 인공지능데이터사이언스학과)의 학생들이 자신이
         원하는 전문 분야를 중심으로 학업을 설계하고 이수할 수 있도록 돕는{' '}
-        <span className="text-[#0056E1] font-medium">
+        <span className="text-blue-600 font-medium">
           맞춤형 진로 설계 시스템
         </span>
         입니다. 학생들은 각자의 관심 분야에 따라 하나 이상의 트랙을 자유롭게

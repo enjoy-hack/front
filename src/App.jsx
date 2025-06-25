@@ -18,7 +18,7 @@ function App() {
 
 function AppContent() {
   const location = useLocation();
-  const hiddenRoutes = ['/login'];
+  const hiddenRoutes = ['/login', '/splash'];
   const shouldHideHeaderFooter = hiddenRoutes.includes(location.pathname);
 
   return (
@@ -28,6 +28,7 @@ function AppContent() {
         <Route path="/" element={<Navigate to="/login" replace />} />
         <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/splash" element={<Splash />} />
         <Route path="/track" element={<TrackInfo />} />
         <Route path="/search" element={<Search />} />
         <Route path="/mypage" element={<MyPage />} />
