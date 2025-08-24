@@ -1,8 +1,11 @@
 // API 요청 관련 함수
 // src/services/userService.js
-import { BASE_URL } from '../constants/api';
+import { BASE_URL } from '../../../constants/api';
 
-export const loginWithSejongPortal = async (sejongPortalId, sejongPortalPassword) => {
+export const loginWithSejongPortal = async (
+  sejongPortalId,
+  sejongPortalPassword
+) => {
   const response = await fetch(`${BASE_URL}/api/auth/sejong/login`, {
     method: 'POST',
     headers: {

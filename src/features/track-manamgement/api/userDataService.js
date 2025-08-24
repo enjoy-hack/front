@@ -1,6 +1,6 @@
 // src/services/userDataService.js
-import { BASE_URL } from '../constants/api';
-import useUserStore from '../stores/useUserStore';
+import { BASE_URL } from '../../../constants/api';
+import useUserStore from '../../../stores/useUserStore';
 
 export const uploadStudentExcel = async (file) => {
   const studentId = useUserStore.getState().studentId;
