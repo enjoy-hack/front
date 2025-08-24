@@ -1,5 +1,3 @@
-// test 1
-
 /** @type { import('@storybook/react-vite').StorybookConfig } */
 const config = {
   "stories": [
