@@ -1,7 +1,7 @@
-import TrackHeader from "./TrackHeader";
-import CourseItem from "./CourseItem";
-import useTrackStore from "../stores/useTrackStore";
- 
+import TrackHeader from './TrackHeader';
+import CourseItem from './CourseItem';
+import useTrackStore from '../stores/useTrackStore';
+
 // import { track1,track2,track3,track4,track5,track6,track7,track8 } from "../constants/mock";
 
 // const trackMap = {
@@ -16,11 +16,11 @@ import useTrackStore from "../stores/useTrackStore";
 // };
 
 const CourseList = ({ activeTrack }) => {
-    // const courses = trackMap[activeTrack] || [];
-       const trackData = useTrackStore((state) => state.trackData);
-       const current = trackData.find((t) => t.trackName === activeTrack);
+  // const courses = trackMap[activeTrack] || [];
+  const trackData = useTrackStore((state) => state.trackData);
+  const current = trackData.find((t) => t.trackName === activeTrack);
 
-         if (!current) {
+  if (!current) {
     return (
       <div className="w-full text-white text-center mt-8">
         <p>업로드된 이력이 없습니다.</p>
@@ -28,20 +28,24 @@ const CourseList = ({ activeTrack }) => {
     );
   }
 
-    const { completedCourses = [], remainingCourses = [], requiredCount = 0 } = current;
+  const { completedCourses = [], remainingCourses = [] } = current;
 
   const allCourses = [
     ...completedCourses.map((c) => ({ ...c, status: '이수' })),
     ...remainingCourses.map((c) => ({ ...c, status: '미이수' })),
   ];
 
-    return (
-        <div className="w-full bg-[#0259DD] rounded-bl-lg rounded-br-lg p-6 flex flex-col items-center -mt-1 z-0 relative">
-            <div className="w-full flex justify-between items-center mb-4">
-               <TrackHeader completedCount={completedCourses.length} total={6} hasData={true} />
-            </div>
+  return (
+    <div className="w-full bg-[#0259DD] rounded-bl-lg rounded-br-lg p-6 flex flex-col items-center -mt-1 z-0 relative">
+      <div className="w-full flex justify-between items-center mb-4">
+        <TrackHeader
+          completedCount={completedCourses.length}
+          total={6}
+          hasData={true}
+        />
+      </div>
 
-{/* <div className="grid grid-cols-6 gap-2 text-sm text-white font-medium px-4 mb-2">
+      {/* <div className="grid grid-cols-6 gap-2 text-sm text-white font-medium px-4 mb-2">
   <span className="col-span-2 text-left">과목 명</span>
   <span className="text-center">해당 학년</span>
   <span className="text-center">해당 학기</span>
@@ -49,9 +53,8 @@ const CourseList = ({ activeTrack }) => {
   <span className="text-center">이수 여부</span>
 </div> */}
 
-
-            <div className="w-full space-y-2">
-                {allCourses.map((course, i) => (
+      <div className="w-full space-y-2">
+        {allCourses.map((course, i) => (
           <CourseItem
             key={`${course.courseCode}-${i}`}
             name={course.courseName}
@@ -61,13 +64,13 @@ const CourseList = ({ activeTrack }) => {
             status={course.status}
           />
         ))}
-            </div>
+      </div>
 
-            {/* <button className="mt-6 w-10 h-10 flex items-center justify-center bg-white rounded-full text-[#0259DD] text-2xl font-bold">
+      {/* <button className="mt-6 w-10 h-10 flex items-center justify-center bg-white rounded-full text-[#0259DD] text-2xl font-bold">
                 +
             </button> */}
-        </div>
-    );
+    </div>
+  );
 };
 
 export default CourseList;
