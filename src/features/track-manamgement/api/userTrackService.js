@@ -1,4 +1,4 @@
-import { BASE_URL } from '../constants/api';
+import { BASE_URL } from '../../../constants/api';
 
 export const postUserTrack = async (studentId, trackName) => {
   const response = await fetch(
