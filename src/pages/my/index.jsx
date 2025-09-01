@@ -1,17 +1,17 @@
 import { useState } from 'react';
-import CommonSquare from '../components/CommonSquare';
-import MyTabs from '../components/MyTabs';
-import MyInfo from '../components/MyInfo';
-import MySetTrack from '../components/MySetTrack';
-import TrackStatusLarge from '../components/TrackStatusLarge';
-import useUserStore from '../stores/useUserStore';
-import TrackInitButton from '../components/TrackInitButton';
-import Button from '../components/Button';
-import TrackLoadMap from '../assets/TrackLoadMap.svg?react';
+import CommonSquare from '../../components/CommonSquare';
+import MyTabs from '../../components/MyTabs';
+import MyInfo from '../../components/MyInfo';
+import MySetTrack from '../../components/MySetTrack';
+import TrackStatusLarge from '../../components/TrackStatusLarge';
+import useUserStore from '../../entities/user/model/useUserStore';
+import TrackInitButton from '../../components/TrackInitButton';
+import Button from '../../components/Button';
+import TrackLoadMap from '../../assets/TrackLoadMap.svg?react';
 import {
   getRecommendTrackByProgress,
   getRecommendTrackByInterest,
-} from '../services/trackRecommendService';
+} from '../../features/recommendation/api/trackRecommendService';
 
 const MyPage = () => {
   const [activeTab, setActiveTab] = useState('내 정보');

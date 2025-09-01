@@ -1,6 +1,6 @@
 import InfoLabel from './InfoLabel';
 import Chip from './Chip';
-import useUserStore from '../stores/useUserStore';
+import useUserStore from '../entities/user/model/useUserStore';
 
 const MyInfo = () => {
   const studentName = useUserStore((state) => state.studentName);

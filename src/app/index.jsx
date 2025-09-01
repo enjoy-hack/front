@@ -5,16 +5,16 @@ import {
   useLocation,
   Navigate,
 } from 'react-router-dom';
-import Home from './pages/home';
-import TrackInfo from './pages/info';
-import NotFound from './pages/NotFound';
-import Search from './pages/Search';
-import Splash from './pages/splash';
-import Header from './widgets/navigation/Header';
-import Footer from './widgets/navigation/Footer';
-import Login from './pages/login';
-import MyPage from './pages/my';
-import UploadSection from './components/UploadSection';
+import Home from '../pages/home';
+import TrackInfo from '../pages/info';
+import NotFound from '../pages/NotFound';
+import Search from '../pages/Search';
+import Splash from '../pages/splash';
+import Header from '../widgets/navigation/Header';
+import Footer from '../widgets/navigation/Footer';
+import Login from '../pages/login';
+import MyPage from '../pages/my';
+import UploadSection from '../components/UploadSection';
 
 function App() {
   return (
@@ -30,7 +30,7 @@ function AppContent() {
   const shouldHideHeaderFooter = hiddenRoutes.includes(location.pathname);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="min-h-screen bg-blue-primary">
       {!shouldHideHeaderFooter && <Header />}
       <Routes>
         <Route path="/" element={<Navigate to="/login" replace />} />

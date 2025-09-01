@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
-import Logo from '../assets/logo-character2.svg?react';
-import MyTrackHeader from '../assets/mytrack-header.svg?react';
-import TrackIcon from '../assets/track.svg?react';
-import SearchIcon from '../assets/search.svg?react';
-import MypageIcon from '../assets/mypage.svg?react';
+import Logo from '../../assets/logo-character2.svg?react';
+import MyTrackHeader from '../../assets/mytrack-header.svg?react';
+import TrackIcon from '../../assets/track.svg?react';
+import SearchIcon from '../../assets/search.svg?react';
+import MypageIcon from '../../assets/mypage.svg?react';
 
 function Header() {
   return (

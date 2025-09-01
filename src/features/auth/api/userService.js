@@ -1,6 +1,6 @@
 // API 요청 관련 함수
 // src/services/userService.js
-import { BASE_URL } from '../../../constants/api';
+import { BASE_URL } from '../../../shared/api/api';
 
 export const loginWithSejongPortal = async (
   sejongPortalId,

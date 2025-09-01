@@ -3,8 +3,8 @@ import TrackStatusLarge from './TrackStatusLarge';
 import Chip from './Chip';
 import Button from './Button';
 import DeleteIcon from '../assets/delete.svg';
-import { uploadStudentExcel } from '../services/userDataService';
-import useTrackStore from '../stores/useTrackStore';
+import { uploadStudentExcel } from '../features/track-manamgement/api/userDataService';
+import useTrackStore from '../entities/course/model/useTrackStore';
 
 const UploadSection = ({ onClose }) => {
   const fileInputRef = useRef(null);

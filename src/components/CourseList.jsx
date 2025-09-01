@@ -1,6 +1,6 @@
 import TrackHeader from './TrackHeader';
 import CourseItem from './CourseItem';
-import useTrackStore from '../stores/useTrackStore';
+import useTrackStore from '../entities/course/model/useTrackStore';
 
 // import { track1,track2,track3,track4,track5,track6,track7,track8 } from "../constants/mock";
 

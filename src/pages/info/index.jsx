@@ -1,6 +1,6 @@
-import InfoList from '../components/InfoList';
-import TrackTabs from '../components/TrackTabs';
-import TrackIntroTop from '../components/TrackIntroTop';
+import InfoList from '../../components/InfoList';
+import TrackTabs from '../../components/TrackTabs';
+import TrackIntroTop from '../../components/TrackIntroTop';
 import { useState } from 'react';
 
 const TABS = [
