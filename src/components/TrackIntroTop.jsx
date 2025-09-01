@@ -1,5 +1,5 @@
 import TrackIcon from '../assets/logo-character.svg?react'; // 일러스트 svg
-import useUserStore from '../stores/useUserStore';
+import useUserStore from '../entities/user/model/useUserStore';
 
 function TrackIntroTop() {
   const studentName = useUserStore((state) => state.studentName);

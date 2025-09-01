@@ -1,7 +1,7 @@
-import TrackTabs from "../components/TrackTabs";
-import CourseList from "../components/CourseList";
-import TrackStatusCard from "../components/TrackStatusCard";
-import UploadSection from "../components/UploadSection"; // 이전에 만든 UploadSection 컴포넌트
+import TrackTabs from "../../components/TrackTabs";
+import CourseList from "../../components/CourseList";
+import TrackStatusCard from "../../components/TrackStatusCard";
+import UploadSection from "../../components/UploadSection"; // 이전에 만든 UploadSection 컴포넌트
 import { useState } from "react";
 
 const TABS = [

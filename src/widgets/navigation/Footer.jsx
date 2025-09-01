@@ -1,7 +1,7 @@
 import React from 'react';
-import SejongIcon from '../assets/logo-sejong.svg?react';
-import SwIcon from '../assets/logo-sw.svg?react';
-import IitpIcon from '../assets/logo-iitp.svg?react';
+import SejongIcon from '../../assets/logo-sejong.svg?react';
+import SwIcon from '../../assets/logo-sw.svg?react';
+import IitpIcon from '../../assets/logo-iitp.svg?react';
 
 function Footer() {
   return (

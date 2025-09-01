@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import useUserStore from '../stores/useUserStore';
+import useUserStore from '../entities/user/model/useUserStore';
 import Button from './Button';
-import { postUserTrack } from '../services/userTrackService';
+import { postUserTrack } from '../features/track-manamgement/api/userTrackService';
 
 const allTracks = [
   '인공지능 시스템',

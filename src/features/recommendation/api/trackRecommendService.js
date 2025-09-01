@@ -1,4 +1,4 @@
-import { BASE_URL } from '../constants/api';
+import { BASE_URL } from '../../../shared/api/api';
 
 export const getRecommendTrackByProgress = async (studentId) => {
   const response = await fetch(

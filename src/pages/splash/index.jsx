@@ -1,13 +1,13 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import TrackStatusCard from '../components/TrackStatusCard';
-import TrackStatusLarge from '../components/TrackStatusLarge';
-import TrackIntroTop from '../components/TrackIntroTop';
-import UploadSection from '../components/UploadSection';
-import DeleteIcon from '../assets/delete.svg';
-import InfoList from '../components/InfoList';
-import TrackTabs from '../components/TrackTabs';
+import TrackStatusCard from '../../components/TrackStatusCard';
+import TrackStatusLarge from '../../components/TrackStatusLarge';
+import TrackIntroTop from '../../components/TrackIntroTop';
+import UploadSection from '../../components/UploadSection';
+import DeleteIcon from '../../assets/delete.svg';
+import InfoList from '../../components/InfoList';
+import TrackTabs from '../../components/TrackTabs';
 
 const TABS = [
   '인공지능시스템',
