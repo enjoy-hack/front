@@ -30,7 +30,7 @@ function AppContent() {
   const shouldHideHeaderFooter = hiddenRoutes.includes(location.pathname);
 
   return (
-    <div className="min-h-screen bg-blue-primary">
+    <div className="min-h-screen w-full min-w-[700px] bg-blue-primary">
       {!shouldHideHeaderFooter && <Header />}
       <Routes>
         <Route path="/" element={<Navigate to="/login" replace />} />

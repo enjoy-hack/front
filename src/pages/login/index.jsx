@@ -5,7 +5,6 @@ import Character from '../../components/Character';
 import { loginWithSejongPortal } from '../../features/auth/api/userService'; // 포털 API 호출 함수
 import { useNavigate } from 'react-router-dom'; // 리다이렉션을 위한 훅
 import useUserStore from '../../entities/user/model/useUserStore';
-import BackGround from '../../assets/background.svg?react';
 
 function Login() {
   const [id, setId] = useState('');
@@ -41,8 +40,40 @@ function Login() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center relative min-h-screen">
-      <BackGround className="bg-cover absolute z-10" />
+    <div className="flex flex-col items-center justify-center relative min-h-screen overflow-x-hidden">
+      <div
+        aria-hidden
+        className="
+          pointer-events-none absolute left-0 bottom-0
+          h-full w-full rounded-bl-[140px]
+          bg-blue-primary ring-2 ring-white/20
+        "
+      />
+      <div
+        aria-hidden
+        className="
+          pointer-events-none absolute left-5 bottom-5
+          h-full w-full rounded-bl-[140px]
+          bg-blue-primary ring-2 ring-white/30
+        "
+      />
+      <div
+        aria-hidden
+        className="
+          pointer-events-none absolute left-10 bottom-10
+          h-full w-full rounded-bl-[140px]
+          bg-blue-primary ring-2 ring-white/30
+        "
+      />
+      <div
+        aria-hidden
+        className="
+          pointer-events-none absolute left-15 bottom-15
+          h-full w-full rounded-bl-[140px]
+          bg-white
+        "
+      />
+
       <div className="relative z-20 w-full max-w-md space-y-10">
         {/* 아이콘 + 마이트랙 로고 */}
         <Character />
