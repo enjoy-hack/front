@@ -7,9 +7,9 @@ import { uploadStudentExcel } from '../api/userDataService'; // 엑셀 업로드
 import useTrackStore from '../../../entities/course/model/useTrackStore'; // 전역 상태 관리
 
 /**
- * TrackDataUploadModal: 학사시스템에서 내려받은 수강이력 엑셀(.xlsx)을 업로드하는 모달.
- * 파일 선택 → 업로드 API 호출 → 전역 스토어에 반영 후 모달을 닫는 흐름을 제공한다.
- * onClose 콜백으로 외부에서 모달 닫기 동작을 제어한다.
+ * TrackDataUploadModal: 학사시스템에서 내려받은 수강이력 엑셀(.xlsx)을 업로드하는 모달
+ * 파일 선택 → 업로드 API 호출 → 전역 스토어에 반영 후 모달을 닫는 흐름을 제공
+ * onClose 콜백으로 외부에서 모달 닫기 동작을 제어
  */
 
 const TrackDataUploadModal = ({ onClose }) => {
