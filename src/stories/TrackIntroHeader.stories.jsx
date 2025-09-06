@@ -14,7 +14,7 @@ const Wrapper = ({ children, width = 420 }) => (
 );
 
 export default {
-  title: 'Sections/TrackIntroHero',
+  title: 'Sections/TrackIntroHeader',
   component: TrackIntroHeader,
   tags: ['autodocs'],
   parameters: {
@@ -55,26 +55,6 @@ export const LongName = {
       <Wrapper width={520}>
         <TrackIntroHeader />
       </Wrapper>
-    );
-  },
-};
-
-/**
- * 다크 주변 배경 대비 확인
- * - 컴포넌트 자체 배경은 없으므로, 주변 배경이 어두울 때 타이포 대비를 확인
- */
-export const OnDarkBackground = {
-  parameters: { backgrounds: { default: 'app-gray' } },
-  render: () => {
-    useUserStore.setState({ studentName: '예령' });
-    return (
-      <div style={{ padding: 24, background: '#111827' }}>
-        <div style={{ background: '#fff', borderRadius: 12 }}>
-          <Wrapper width={440}>
-            <TrackIntroHeader />
-          </Wrapper>
-        </div>
-      </div>
     );
   },
 };

@@ -44,7 +44,7 @@ export default {
 export const StaticPreview = {
   render: (args) => (
     <div style={{ width: 480, pointerEvents: 'none' }}>
-      <UploadSection {...args} />
+      <TrackDataUploadModal {...args} />
     </div>
   ),
 };
