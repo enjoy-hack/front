@@ -2,7 +2,7 @@ import React from 'react';
 import LogoCharacter from '../../../assets/logo-character.svg?react';
 
 /**
- * TrackStatus: 캐릭터 + 제목(+선택적 소제목) 헤더 블록.
+ * TrackStatus: 캐릭터 + 제목(+선택적 소제목) 헤더 블록
  * variant='card'|'large'로 크기/간격을 전환하고, 필요 시 onClickCharacter로 캐릭터 클릭을 허용
  * title에 HTML을 써야 하면 allowHtmlTitle=true로 설정
  */
