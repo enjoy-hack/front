@@ -1,3 +1,9 @@
+/**
+ * AppPrimarySection: 브랜드 기본색(#0259DD) 배경의 공용 섹션 컨테이너
+ * 하단 모서리를 둥글게 하고 세로 스택·중앙 정렬로 children을 감쌈
+ * 카드 하단 영역이나 히어로 하이라이트 배경처럼 강조 섹션에 적합
+ */
+
 const AppPrimarySection = ({ children }) => {
   // children 프롭을 받아 내부 콘텐츠로 사용
   return (
