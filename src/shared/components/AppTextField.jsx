@@ -1,4 +1,4 @@
-import React, { useState } from 'react'; // 함수형 컴포넌트에서 로컬 상태를 쓰기 위해 useState 훅을 임포트
+import { useState } from 'react'; // 함수형 컴포넌트에서 로컬 상태를 쓰기 위해 useState 훅을 임포트
 import { Eye, EyeOff, Search } from 'lucide-react'; // lucide-react에서 아이콘을 임포트
 
 /**
@@ -29,7 +29,7 @@ function AppTextField({ type = 'text', placeholder, value, onChange, error }) {
           // 클래스: 전체 너비, 패딩, 테두리, 둥근 모서리, 포커스 시 테두리/링 효과
           className={`
             w-full px-4 py-3 border rounded-md outline-none transition
-            border-blue-500 focus:border-blue-600 focus:ring-2 focus:ring-blue-200
+            border-[#DFDFDF] focus:outline-none focus:ring-0 focus:border-blue-light-1
           `}
         />
         {/* 비밀번호 토글 아이콘 */}
