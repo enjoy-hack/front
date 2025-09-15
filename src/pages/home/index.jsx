@@ -1,7 +1,7 @@
-import TrackTabs from '../../components/TrackTabs';
-import CourseList from '../../components/CourseList';
-import TrackStatusCard from '../../components/TrackStatusCard';
-import UploadSection from '../../components/UploadSection'; // 이전에 만든 UploadSection 컴포넌트
+import TrackTabs from '../../features/track-management/components/TrackTabs';
+import TrackCourseList from '../../features/track-management/components/TrackCourseList';
+import TrackStatus from '../../features/track-management/components/TrackStatus';
+import TrackDataUploadModal from '../../features/track-management/components/TrackDataUploadModal'; // 이전에 만든 TrackDataUploadModal 컴포넌트
 import { useState } from 'react';
 
 const TABS = [
@@ -23,8 +23,8 @@ const Home = () => {
   const handleCloseUpload = () => setShowUpload(false);
 
   return (
-    <div className="p-8 min-h-[75vh] text-center bg-white rounded-tl-[150px] rounded-br-[150px]">
-      <TrackStatusCard
+    <div className="p-8 text-center">
+      <TrackStatus
         title="오늘도 트랙을 달려볼까요?"
         subtitle="저를 눌러 수강이력을 업로드 해주세요."
         onClickCharacter={() => setShowUpload(true)}
@@ -37,7 +37,7 @@ const Home = () => {
             activeTab={activeTab}
             onChange={setActiveTab}
           />
-          <CourseList activeTrack={activeTab} />
+          <TrackCourseList activeTrack={activeTab} />
         </div>
       </div>
 
@@ -54,7 +54,7 @@ const Home = () => {
                     - onClick 이벤트가 배경으로 전파(버블링)되는 것을 막아
                       컨텐츠 내부 클릭 시 모달이 닫히지 않게 합니다. */}
           <div onClick={(e) => e.stopPropagation()}>
-            <UploadSection onClose={handleCloseUpload} />
+            <TrackDataUploadModal onClose={handleCloseUpload} />
           </div>
         </div>
       )}

@@ -1,3 +1,5 @@
+// 전역 컨텍스트 및 상태 관리 설정 (라우팅, 인증 등)
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -5,16 +7,18 @@ import {
   useLocation,
   Navigate,
 } from 'react-router-dom';
+
+import Header from '../widgets/navigation/Header';
+import Footer from '../widgets/navigation/Footer';
+
 import Home from '../pages/home';
 import TrackInfo from '../pages/info';
 import NotFound from '../pages/NotFound';
 import Search from '../pages/Search';
 import Splash from '../pages/splash';
-import Header from '../widgets/navigation/Header';
-import Footer from '../widgets/navigation/Footer';
 import Login from '../pages/login';
 import MyPage from '../pages/my';
-import UploadSection from '../components/UploadSection';
+import TrackDataUploadModal from '../features/track-management/components/TrackDataUploadModal';
 
 function App() {
   return (

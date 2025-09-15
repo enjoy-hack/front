@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import CommonSquare from '../../components/CommonSquare';
-import MyTabs from '../../components/MyTabs';
-import MyInfo from '../../components/MyInfo';
-import MySetTrack from '../../components/MySetTrack';
-import TrackStatusLarge from '../../components/TrackStatusLarge';
+import AppPrimarySection from '../../shared/components/AppPrimarySection';
+// import MyTabs from '../../components/MyTabs';
+// import MyInfo from '../../components/MyInfo';
+// import MySetTrack from '../../components/MySetTrack';
+import TrackStatus from '../../features/track-management/components/TrackStatus';
 import useUserStore from '../../entities/user/model/useUserStore';
-import TrackInitButton from '../../components/TrackInitButton';
-import Button from '../../components/Button';
-import TrackLoadMap from '../../assets/TrackLoadMap.svg?react';
+import TrackInitButton from '../../features/track-management/components/TrackInitButton';
+// import AppButton from '../../shared/components/AppButton';
+// import TrackLoadMap from '../../assets/TrackLoadMap.svg?react';
 import {
   getRecommendTrackByProgress,
   getRecommendTrackByInterest,
@@ -44,20 +44,20 @@ const MyPage = () => {
     <div className="w-full mx-auto my-8 px-4">
       {/* 상단 */}
       <div className="flex flex-col items-center mb-10">
-        <TrackStatusLarge
+        <TrackStatus
           title={`${studentName}님<br />오늘도 힘차게 달려볼까요?`}
         />
         <div className="mt-6 w-full max-w-[700px]">
           <MyTabs activeTab={activeTab} setActiveTab={setActiveTab} />
-          <CommonSquare>
+          <AppPrimarySection>
             {activeTab === '내 정보' ? <MyInfo /> : <MySetTrack />}
-          </CommonSquare>
+          </AppPrimarySection>
         </div>
       </div>
 
       {/* 추천 버튼 */}
       {/* <div className="flex justify-center mb-10">
-        <Button
+        <AppButton
           label={loading ? '추천 중...' : '추천 완료'}
           onClick={handleSubmit}
           disabled={loading}
@@ -91,7 +91,7 @@ const MyPage = () => {
 
       {/* 로드맵 SVG 표시 */}
       <div className="mt-25 flex justify-center">
-        <TrackLoadMap className="w-full max-w-[1000px] h-auto" />
+        // <TrackLoadMap className="w-full max-w-[1000px] h-auto" />
       </div>
 
       {/* 추천 결과 출력 */}

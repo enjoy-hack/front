@@ -1,6 +1,5 @@
-import InfoList from '../../components/InfoList';
-import TrackTabs from '../../components/TrackTabs';
-import TrackIntroTop from '../../components/TrackIntroTop';
+import TrackTabs from '../../features/track-management/components/TrackTabs';
+import TrackIntroHeader from '../../features/track-management/components/TrackIntroHeader';
 import { useState } from 'react';
 
 const TABS = [
@@ -18,21 +17,20 @@ const TrackInfo = () => {
   const [activeTab, setActiveTab] = useState(TABS[0]);
 
   return (
-// <<<<<<< feat/userapi
-//     <div className="p-8 text-center">
-//       <div className="w-full mx-auto flex justify-center">
-//         <div>
-//         {/* <TrackIntroTop /> */}
-//         <TrackTabs tabs={TABS} activeTab={activeTab} onChange={setActiveTab} />
-//       <InfoList />
-// =======
+    // <<<<<<< feat/userapi
+    //     <div className="p-8 text-center">
+    //       <div className="w-full mx-auto flex justify-center">
+    //         <div>
+    //         {/* <TrackIntroHeader /> */}
+    //         <TrackTabs tabs={TABS} activeTab={activeTab} onChange={setActiveTab} />
+    //       <InfoList />
+    // =======
     <div className="p-8 flex justify-center">
       <div className="w-full max-w-[1200px] text-center">
         <div className="mb-16">
-          <TrackIntroTop />
+          <TrackIntroHeader />
         </div>
         <TrackTabs tabs={TABS} activeTab={activeTab} onChange={setActiveTab} />
-        <InfoList />
       </div>
     </div>
   );

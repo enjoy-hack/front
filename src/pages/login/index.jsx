@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import Input from '../../components/Input';
-import Button from '../../components/Button';
-import Character from '../../components/Character';
+import AppTextField from '../../shared/components/AppTextField';
+import AppButton from '../../shared/components/AppButton';
+import AppBrand from '../../shared/components/AppBrand';
 import { loginWithSejongPortal } from '../../features/auth/api/userService'; // 포털 API 호출 함수
 import { useNavigate } from 'react-router-dom'; // 리다이렉션을 위한 훅
 import useUserStore from '../../entities/user/model/useUserStore';
@@ -76,8 +76,8 @@ function Login() {
 
       <div className="relative z-20 w-full max-w-sm items-center justify-center flex flex-col gap-4 min-h-[600px] my-auto">
         {/* 아이콘 + 마이트랙 로고 */}
-        <Character />
-        <Input
+        <AppBrand />
+        <AppTextField
           type="text"
           placeholder="학번"
           value={id}
@@ -86,7 +86,7 @@ function Login() {
             setError('');
           }}
         />
-        <Input
+        <AppTextField
           type="password"
           placeholder="비밀번호"
           value={pw}
@@ -96,7 +96,7 @@ function Login() {
           }}
           error={error}
         />
-        <Button
+        <AppButton
           label={loading ? '로그인 중...' : '로그인'}
           onClick={handleLogin}
           disabled={!id || !pw || loading}

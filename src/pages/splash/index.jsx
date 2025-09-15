@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import TrackStatusCard from '../../components/TrackStatusCard';
-import TrackStatusLarge from '../../components/TrackStatusLarge';
-import TrackIntroTop from '../../components/TrackIntroTop';
-import UploadSection from '../../components/UploadSection';
+import TrackStatus from '../../features/track-management/components/TrackStatus';
+import TrackIntroHeader from '../../features/track-management/components/TrackIntroHeader';
+import TrackDataUploadModal from '../../features/track-management/components/TrackDataUploadModal';
 import DeleteIcon from '../../assets/delete.svg';
-import InfoList from '../../components/InfoList';
-import TrackTabs from '../../components/TrackTabs';
+// import InfoList from '../../components/InfoList';
+import TrackTabs from '../../features/track-management/components/TrackTabs';
 
 const TABS = [
   '인공지능시스템',
@@ -60,27 +59,31 @@ const Splash = () => {
           onClick={handleCloseUpload}
         >
           <div onClick={(e) => e.stopPropagation()}>
-            <UploadSection onClose={handleCloseUpload} />
+            <TrackDataUploadModal onClose={handleCloseUpload} />
           </div>
         </div>
       )}
 
       {/* 메인 콘텐츠 */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-8 md:px-36">
-        {' '}
         {/* 양옆 패딩 조절 필요 */}
         {step === 1 && (
-          <TrackStatusLarge
+          <TrackStatus
+            variant="large"
+            allowHtmlTitle={true} // HTML 허용
             title={`환영합니다!<br>마이트랙에서는 인공지능융합대학의 트랙제를 관리할 수 있습니다`}
           />
         )}
         {step === 2 && (
-          <TrackStatusLarge title="먼저 ‘트랙제’에 대해서 알아볼까요?" />
+          <TrackStatus
+            variant="large"
+            title="먼저 ‘트랙제’에 대해서 알아볼까요?"
+          />
         )}
         {step === 3 && (
           <>
             <div className="mt-25 mb-10 w-full">
-              <TrackIntroTop />
+              <TrackIntroHeader />
             </div>
 
             <div className="w-full max-w-[1200px] text-center mt-10">
@@ -89,12 +92,12 @@ const Splash = () => {
                 activeTab={activeTab}
                 onChange={setActiveTab}
               />
-              <InfoList />
             </div>
 
             {/* 하단 안내 문구 */}
             <div className="mt-20 mb-16">
-              <TrackStatusCard
+              <TrackStatus
+                variant="card"
                 title="사용자님께 가장 적합한 트랙을 알아볼까요?"
                 subtitle="저를 눌러 수강이력을 업로드 해주세요."
                 onClickCharacter={() => setShowUpload(true)}

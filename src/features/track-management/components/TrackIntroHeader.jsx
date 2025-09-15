@@ -1,9 +1,18 @@
 import useUserStore from '../entities/user/model/useUserStore';
 
-function TrackIntroTop() {
+/**
+ * TrackIntroHeader: 트랙 안내 페이지의 히어로 섹션(일러스트 + 환영 헤드라인 + 소개 문단)
+ * Zustand에서 studentName을 가져와 개인화된 인사말을 표시
+ * 온보딩/인트로 상단에서 트랙 제도의 개요와 핵심 포인트를 간결히 전달
+ */
+
+function TrackIntroHeader() {
+  // 프롭 없음. 정적 인트로 섹션 렌더링
+  // 스토어에서 학생 이름만 읽어옴. 스토리북에서는 기본 값 셋업해줘야 자연스러운 렌더 가능
   const studentName = useUserStore((state) => state.studentName);
 
   return (
+    // 전체 컨테이너: 왼쪽 정렬, 좌우 패딩
     <div className="text-left px-4">
       {/* 제목 */}
       <h1 className="text-2xl font-semibold text-blue-600 mb-6">
@@ -33,4 +42,4 @@ function TrackIntroTop() {
   );
 }
 
-export default TrackIntroTop;
+export default TrackIntroHeader;
