@@ -1,5 +1,5 @@
 import {
-  BrowserRouter,
+  BrowserRouter as Router,
   Routes,
   Route,
   useLocation,
@@ -18,9 +18,9 @@ import UploadSection from '../components/UploadSection';
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <AppContent />
-    </BrowserRouter>
+    </Router>
   );
 }
 
@@ -30,19 +30,23 @@ function AppContent() {
   const shouldHideHeaderFooter = hiddenRoutes.includes(location.pathname);
 
   return (
-    <div className="min-h-screen w-full min-w-[700px] bg-blue-primary">
+    <div className="flex flex-col min-h-screen">
       {!shouldHideHeaderFooter && <Header />}
-      <Routes>
-        <Route path="/" element={<Navigate to="/login" replace />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/splash" element={<Splash />} />
-        <Route path="/track" element={<TrackInfo />} />
-        <Route path="/search" element={<Search />} />
-        <Route path="/mypage" element={<MyPage />} />
-        <Route path="/upload" element={<UploadSection />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <main
+        className={`w-full flex-grow ${!shouldHideHeaderFooter ? 'pt-[60px]' : ''}`}
+      >
+        <Routes>
+          <Route path="/" element={<Navigate to="/login" replace />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/splash" element={<Splash />} />
+          <Route path="/track" element={<TrackInfo />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/mypage" element={<MyPage />} />
+          <Route path="/upload" element={<UploadSection />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
       {!shouldHideHeaderFooter && <Footer />}
     </div>
   );
