@@ -1,12 +1,11 @@
-import React from 'react';
 import SejongIcon from '../../assets/logo-sejong.svg?react';
 import SwIcon from '../../assets/logo-sw.svg?react';
 import IitpIcon from '../../assets/logo-iitp.svg?react';
 
 function Footer() {
   return (
-    <footer className="bg-blue-600 text-white text-sm mt-16">
-      <div className="w-full px-6 py-4 flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+    <footer className="bg-blue-primary w-full text-white text-sm">
+      <div className="px-6 py-4 flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
         {/* 왼쪽: 연락처 및 안내 */}
         <div className="text-xs">
           <div className="space-y-0.5">
