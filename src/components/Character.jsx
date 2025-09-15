@@ -5,7 +5,7 @@ function Character() {
   return (
     <div className="flex flex-col items-center gap-2">
       <Logo className="w-20 h-20 block" />
-      <MyTrack />
+      <MyTrack className="mb-4" />
     </div>
   );
 }

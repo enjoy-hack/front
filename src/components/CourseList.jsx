@@ -22,7 +22,7 @@ const CourseList = ({ activeTrack }) => {
 
   if (!current) {
     return (
-      <div className="w-full text-white text-center mt-8">
+      <div className="w-full text-black text-center mt-8">
         <p>업로드된 이력이 없습니다.</p>
       </div>
     );

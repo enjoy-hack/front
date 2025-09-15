@@ -1,4 +1,3 @@
-import TrackIcon from '../assets/logo-character.svg?react'; // 일러스트 svg
 import useUserStore from '../entities/user/model/useUserStore';
 
 function TrackIntroTop() {
@@ -6,11 +5,6 @@ function TrackIntroTop() {
 
   return (
     <div className="text-left px-4">
-      {/* 일러스트 */}
-      <div className="w-24 h-24 mb-6">
-        <TrackIcon className="w-full h-full" />
-      </div>
-
       {/* 제목 */}
       <h1 className="text-2xl font-semibold text-blue-600 mb-6">
         안녕하세요! {studentName}님
