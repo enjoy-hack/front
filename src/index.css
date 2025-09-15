@@ -1,5 +1,27 @@
 @import 'tailwindcss';
 
+:root {
+  /* 웹페이지 전체에 적용될 기본 글꼴 목록 */
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo',
+    'Pretendard Variable', Pretendard, Roboto, 'Noto Sans KR', 'Segoe UI',
+    'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    sans-serif;
+  /* 기본 줄 간격 */
+  line-height: 1.5;
+  /* 기본 글자 두께 */
+  font-weight: 400;
+  background-color: #0259dd;
+}
+
+/* body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  min-width: 320px;
+  min-height: 100vh;
+} */
+
 @theme {
   --color-blue-primary: #0259dd;
   --color-blue-light-1: #4084e8;
