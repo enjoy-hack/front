@@ -16,7 +16,7 @@ function Input({ type = 'text', placeholder, value, onChange, error }) {
           onChange={(e) => onChange(e.target.value)}
           className={`
             w-full px-4 py-3 border rounded-md outline-none transition
-            border-blue-500 focus:border-blue-600 focus:ring-2 focus:ring-blue-200
+            border-[#DFDFDF] focus:outline-none focus:ring-0 focus:border-blue-light-1
           `}
         />
         {isPassword && (

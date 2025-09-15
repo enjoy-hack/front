@@ -40,7 +40,7 @@ function Login() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center relative min-h-screen overflow-x-hidden">
+    <div className="flex flex-col items-center relative min-h-screen overflow-x-hidden">
       <div
         aria-hidden
         className="
@@ -74,35 +74,33 @@ function Login() {
         "
       />
 
-      <div className="relative z-20 w-full max-w-md space-y-10">
+      <div className="relative z-20 w-full max-w-sm items-center justify-center flex flex-col gap-4 min-h-[600px] my-auto">
         {/* 아이콘 + 마이트랙 로고 */}
         <Character />
-        <div className="w-full space-y-4">
-          <Input
-            type="text"
-            placeholder="학번을 입력해주세요."
-            value={id}
-            onChange={(val) => {
-              setId(val);
-              setError('');
-            }}
-          />
-          <Input
-            type="password"
-            placeholder="비밀번호를 입력해주세요."
-            value={pw}
-            onChange={(val) => {
-              setPw(val);
-              setError('');
-            }}
-            error={error}
-          />
-          <Button
-            label={loading ? '로그인 중...' : '로그인'}
-            onClick={handleLogin}
-            disabled={!id || !pw || loading}
-          />
-        </div>
+        <Input
+          type="text"
+          placeholder="학번"
+          value={id}
+          onChange={(val) => {
+            setId(val);
+            setError('');
+          }}
+        />
+        <Input
+          type="password"
+          placeholder="비밀번호"
+          value={pw}
+          onChange={(val) => {
+            setPw(val);
+            setError('');
+          }}
+          error={error}
+        />
+        <Button
+          label={loading ? '로그인 중...' : '로그인'}
+          onClick={handleLogin}
+          disabled={!id || !pw || loading}
+        />
       </div>
     </div>
   );
