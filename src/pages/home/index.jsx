@@ -30,7 +30,7 @@ const Home = () => {
         onClickCharacter={() => setShowUpload(true)}
       />
 
-      <div className="w-full mx-auto flex justify-center mt-24">
+      <div className="w-full mx-auto flex justify-center mt-12">
         <div>
           <TrackTabs
             tabs={TABS}

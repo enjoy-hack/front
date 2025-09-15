@@ -19,13 +19,13 @@ function TrackStatus({
   const characterClasses = isLarge ? 'w-40 h-auto' : 'w-28 h-auto'; // 캐릭터 크기 매핑(large: w-40, card: w-28)
   const titleClasses = isLarge // 제목 타이포, 마진 매핑
     ? 'text-2xl font-semibold text-blue-600 mb-2 leading-relaxed'
-    : 'text-xl font-semibold text-blue-600 mt-16 mb-8';
+    : 'text-xl font-semibold text-blue-600 mt-8 mb-4';
 
   return (
     // 공통 레이아웃
     <div className="text-center">
       {/* 캐릭터 */}
-      <div className={`flex justify-center ${isLarge ? 'mb-4' : 'mb-8'}`}>
+      <div className={`flex justify-center ${isLarge ? 'mb-4' : 'mt-4 mb-8'}`}>
         {onClickCharacter ? ( // 클릭 가능 여부에 따라 button으로 감싸기
           <button
             type="button"
