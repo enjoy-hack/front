@@ -1,5 +1,3 @@
-'use client';
-
 import React, { useEffect, useState } from 'react';
 import TrackStatusCard from '../../components/TrackStatusCard';
 import TrackStatusLarge from '../../components/TrackStatusLarge';
@@ -37,7 +35,24 @@ const Splash = () => {
   }, []);
 
   return (
-    <div className="w-full min-h-screen bg-white relative overflow-hidden">
+    <div className="w-full min-h-screen relative overflow-hidden">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute right-0 top-0 h-full w-full rounded-tr-[140px] bg-blue-primary ring-2 ring-white/20"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute right-5 top-5 h-full w-full rounded-tr-[140px] bg-blue-primary ring-2 ring-white/20"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute right-10 top-10 h-full w-full rounded-tr-[140px] bg-blue-primary ring-2 ring-white/20"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute right-15 top-15 h-full w-full rounded-tr-[140px] bg-white"
+      />
+
       {/* ✅ 업로드 팝업 */}
       {showUpload && (
         <div
@@ -64,10 +79,6 @@ const Splash = () => {
         )}
         {step === 3 && (
           <>
-            <div className="mt-30">
-              <TrackStatusLarge title="먼저 ‘트랙제’에 대해서 알아볼까요?" />
-            </div>
-
             <div className="mt-25 mb-10 w-full">
               <TrackIntroTop />
             </div>
