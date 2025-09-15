@@ -23,7 +23,7 @@ const Home = () => {
   const handleCloseUpload = () => setShowUpload(false);
 
   return (
-    <div className="p-8 text-center">
+    <div className="p-8 text-center min-h-[75vh] bg-white rounded-tl-[150px] rounded-br-[150px]">
       <TrackStatus
         title="오늘도 트랙을 달려볼까요?"
         subtitle="저를 눌러 수강이력을 업로드 해주세요."
