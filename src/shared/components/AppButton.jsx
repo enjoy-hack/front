@@ -18,7 +18,7 @@ function AppButton({
 
   const variantClasses = {
     // 객체 선언 시작: variant 값에 따른 클래스 문자열 매핑
-    default: disabled ? 'bg-gray-300 text-white' : 'bg-blue-600 text-white', // 기본 버튼: 비활성화 시 회색, 활성화 시 파란색/흰색
+    default: disabled ? 'bg-blue-light-3 text-white' : 'bg-blue-600 text-white', // 기본 버튼: 비활성화 시 회색, 활성화 시 파란색/흰색
     file: 'border border-blue-400 text-blue-400 bg-white', // 파일 업로드 버튼: 파란색 테두리/텍스트, 흰색 배경
     track: isSelected // 트랙 토글 버튼: 선택 상태에 따라 스타일 변경
       ? 'bg-blue-600 text-white border border-blue-600 rounded-full px-3 py-2' // 선택됨: 파란색 배경/테두리, 흰색 텍스트, 둥근 모서리, 패딩

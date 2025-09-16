@@ -14,7 +14,7 @@ function AppBrand() {
       {/* 세로 스택 레이아웃(flex 컨테이너, 중앙 정렬, 아이템 간격)으로 상단에 마스코트, 하단에 마이트랙 로고 배치*/}
       {/*브랜드 락업(마스코트+로고) 형태*/}
       <Logo className="w-20 h-20 block" />
-      <MyTrack />
+      <MyTrack className="mb-4" />
     </div>
   );
 }

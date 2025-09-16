@@ -32,7 +32,7 @@ const TrackCourseList = ({ activeTrack }) => {
   if (!current) {
     // 데이터가 없으면 업로드 안내 메시지 표시
     return (
-      <div className="w-full text-white text-center mt-8">
+      <div className="w-full text-blue-light-1 text-center mt-8">
         <p>업로드된 이력이 없습니다.</p>
       </div>
     );
