@@ -16,9 +16,9 @@ function TrackIntroHeader() {
     // 전체 컨테이너: 왼쪽 정렬, 좌우 패딩
     <div className="text-left px-4">
       {/* 일러스트 */}
-      <div className="w-24 h-24 mb-6">
+      {/* <div className="w-24 h-24 mb-6">
         <TrackIcon className="w-full h-full" />
-      </div>
+      </div> */}
 
       {/* 제목 */}
       <h1 className="text-2xl font-semibold text-blue-600 mb-6">
