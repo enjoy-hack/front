@@ -33,7 +33,7 @@
         "academicSemester": "2학기"
       },
       {
-        "courseName": "Human-Al Interaction",
+        "courseName": "Human-AI Interaction",
         "courseAlias": "HCI 개론",
         "courseCode": "CS4002",
         "academicYear": "4학년",
@@ -131,7 +131,7 @@
         "academicSemester": "1학기"
       },
       {
-        "courseName": "Human-Al Interaction",
+        "courseName": "Human-AI Interaction",
         "courseAlias": "HCI 개론",
         "courseCode": "CS4002",
         "academicYear": "4학년",
@@ -264,7 +264,7 @@
         "academicSemester": "1학기"
       },
       {
-        "courseName": "Al 네트워킹",
+        "courseName": "AI 네트워킹",
         "courseAlias": null,
         "courseCode": "CS4019",
         "academicYear": "4학년",
@@ -600,7 +600,7 @@
         "academicSemester": "2학기"
       },
       {
-        "courseName": "Human-Al Interaction",
+        "courseName": "Human-AI Interaction",
         "courseAlias": null,
         "courseCode": "AI4003",
         "academicYear": "4학년",

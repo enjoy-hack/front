@@ -15,6 +15,13 @@ const sqlPath = resolve(
 );
 const outPath = resolve(here, '../src/entities/track/data/tracks.json');
 
+// data.sql 의 과목명 오타. 대문자 I 자리에 소문자 l 이 들어가 실제 과목명과 매칭되지 않았다
+const COURSE_NAME_FIXES = {
+  'Human-Al Interaction': 'Human-AI Interaction',
+  'Al 네트워킹': 'AI 네트워킹',
+};
+const fixName = (name) => COURSE_NAME_FIXES[name] ?? name;
+
 // SQL 값 목록 "(1, 'a', NULL, 'b')" 에서 값을 꺼낸다. '' 는 작은따옴표 이스케이프
 function parseValues(tuple) {
   const values = [];
@@ -54,8 +61,8 @@ export function convertTracksSql(sql) {
       if (!track)
         throw new Error(`track_id ${trackId}에 해당하는 트랙이 없습니다`);
       track.courses.push({
-        courseName,
-        courseAlias,
+        courseName: fixName(courseName),
+        courseAlias: courseAlias && fixName(courseAlias),
         courseCode,
         academicYear,
         academicSemester,

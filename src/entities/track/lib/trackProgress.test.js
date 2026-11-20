@@ -95,9 +95,9 @@ describe('recommendByProgress', () => {
   it('진척률이 가장 큰 트랙을 추천한다', () => {
     const progress = calculateTrackProgress(
       [TRACK_A, TRACK_B],
-      new Set(['운영체제'])
+      new Set(['운영체제', '컴퓨터네트워크'])
     );
-    // A: 1/3, B: 1/2
+    // 이수 과목 수 A: 1, B: 2 (필요 과목 수는 둘 다 6)
     expect(recommendByProgress(progress).trackName).toBe('B 트랙');
   });
 
