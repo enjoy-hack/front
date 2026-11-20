@@ -1,42 +1,25 @@
-import { useState } from 'react';
-import AppTextField from '../../shared/components/AppTextField';
 import AppButton from '../../shared/components/AppButton';
 import AppBrand from '../../shared/components/AppBrand';
-import { loginWithSejongPortal } from '../../features/auth/api/userService'; // 포털 API 호출 함수
-import { useNavigate } from 'react-router-dom'; // 리다이렉션을 위한 훅
+import { useNavigate } from 'react-router-dom';
 import useUserStore from '../../entities/user/model/useUserStore';
 
+// 서버 없이 동작하는 데모라 세종 포털 로그인 대신 예시 사용자로 들어간다.
+// 예전에는 포털 학번과 비밀번호를 백엔드로 보냈지만, 지금은 어디에도 보내지 않는다.
+const DEMO_USER = {
+  studentId: '데모 계정',
+  studentName: '방문자',
+  major: '체험 모드',
+};
+
 function Login() {
-  const [id, setId] = useState('');
-  const [pw, setPw] = useState('');
-  const [error, setError] = useState('');
-  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleLogin = async () => {
-    setError('');
-    setLoading(true);
-
-    try {
-      const userData = await loginWithSejongPortal(id, pw);
-      useUserStore.getState().setStudentId(userData.studentIdString);
-      useUserStore.getState().setStudentName(userData.studentName);
-      useUserStore.getState().setMajor(userData.major);
-      console.log('로그인 성공:', userData);
-      alert(`${userData.studentName}님 환영합니다!`);
-      if (userData.hasLoginHistory) {
-        useUserStore.getState().setHasLoginHistory(true);
-        navigate('/home'); // 필요시 리다이렉션
-      } else {
-        navigate('/splash'); // 처음 로그인 시 스플래시 페이지로 이동
-      }
-      // localStorage.setItem('studentInfo', JSON.stringify(userData));
-    } catch (err) {
-      console.error(err);
-      setError('포털 아이디 혹은 비밀번호가 잘못되었습니다.');
-    } finally {
-      setLoading(false);
-    }
+  const handleStart = () => {
+    const user = useUserStore.getState();
+    user.setStudentId(DEMO_USER.studentId);
+    user.setStudentName(DEMO_USER.studentName);
+    user.setMajor(DEMO_USER.major);
+    navigate('/splash');
   };
 
   return (
@@ -77,30 +60,12 @@ function Login() {
       <div className="relative z-20 w-full max-w-sm items-center justify-center flex flex-col gap-4 min-h-[600px] my-auto">
         {/* 아이콘 + 마이트랙 로고 */}
         <AppBrand />
-        <AppTextField
-          type="text"
-          placeholder="학번"
-          value={id}
-          onChange={(val) => {
-            setId(val);
-            setError('');
-          }}
-        />
-        <AppTextField
-          type="password"
-          placeholder="비밀번호"
-          value={pw}
-          onChange={(val) => {
-            setPw(val);
-            setError('');
-          }}
-          error={error}
-        />
-        <AppButton
-          label={loading ? '로그인 중...' : '로그인'}
-          onClick={handleLogin}
-          disabled={!id || !pw || loading}
-        />
+        <p className="text-center text-sm text-gray-600 leading-relaxed">
+          세종 포털 계정 없이 체험할 수 있는 데모입니다.
+          <br />
+          성적 파일은 서버로 전송되지 않고 브라우저 안에서만 처리됩니다.
+        </p>
+        <AppButton label="체험하기" onClick={handleStart} />
       </div>
     </div>
   );

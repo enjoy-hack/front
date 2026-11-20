@@ -1,110 +1,79 @@
 import { useState } from 'react';
 import AppPrimarySection from '../../shared/components/AppPrimarySection';
-// import MyTabs from '../../components/MyTabs';
-// import MyInfo from '../../components/MyInfo';
-// import MySetTrack from '../../components/MySetTrack';
 import TrackStatus from '../../features/track-management/components/TrackStatus';
-import useUserStore from '../../entities/user/model/useUserStore';
 import TrackInitButton from '../../features/track-management/components/TrackInitButton';
-// import AppButton from '../../shared/components/AppButton';
-// import TrackLoadMap from '../../assets/TrackLoadMap.svg?react';
-import {
-  getRecommendTrackByProgress,
-  getRecommendTrackByInterest,
-} from '../../features/recommendation/api/trackRecommendService';
+import useUserStore from '../../entities/user/model/useUserStore';
+import useTrackStore from '../../entities/course/model/useTrackStore';
+import { recommendByProgress } from '../../entities/track';
+import MyTabs from './ui/MyTabs';
+import { MY_TABS } from './model/tabs';
+import MyInfo from './ui/MyInfo';
+import MySetTrack from './ui/MySetTrack';
 
 const MyPage = () => {
-  const [activeTab, setActiveTab] = useState('내 정보');
-  const studentId = useUserStore((state) => state.studentId);
+  const [activeTab, setActiveTab] = useState(MY_TABS[0]);
   const studentName = useUserStore((state) => state.studentName);
-  const [loading, setLoading] = useState(false);
+  const trackData = useTrackStore((state) => state.trackData);
+  // undefined: 아직 추천 전, null: 추천할 트랙 없음
+  const [recommended, setRecommended] = useState(undefined);
 
-  const [progressResult, setProgressResult] = useState(null);
-  const [interestResult, setInterestResult] = useState(null);
-
-  const handleSubmit = async () => {
-    try {
-      setLoading(true);
-      const [progressRes, interestRes] = await Promise.all([
-        getRecommendTrackByProgress(studentId),
-        getRecommendTrackByInterest(studentId),
-      ]);
-      console.log('이수율 기반 추천:', progressRes);
-      console.log('관심 기반 추천:', interestRes);
-      setProgressResult(progressRes);
-      setInterestResult(interestRes);
-    } catch (error) {
-      console.error('추천 트랙 요청 중 오류 발생:', error);
-    } finally {
-      setLoading(false);
-    }
+  // 예전에는 서버의 진척률 기반, 관심 과목 기반 추천 API 두 개를 불렀다.
+  // 관심 과목을 등록하는 화면이 프론트에 없어 관심 과목 기반 추천은 입력이 들어갈 수 없었으므로,
+  // 업로드 결과로 계산하는 진척률 기반 추천만 남긴다.
+  const handleRecommend = () => {
+    setRecommended(recommendByProgress(trackData));
   };
 
   return (
-    <div className="w-full mx-auto my-8 px-4">
+    <div className="w-full mx-auto p-8 min-h-[75vh] bg-white rounded-tl-[150px] rounded-br-[150px]">
       {/* 상단 */}
       <div className="flex flex-col items-center mb-10">
         <TrackStatus
-          title={`${studentName}님<br />오늘도 힘차게 달려볼까요?`}
+          title={
+            <>
+              {studentName && (
+                <>
+                  {studentName}님
+                  <br />
+                </>
+              )}
+              오늘도 힘차게 달려볼까요?
+            </>
+          }
         />
         <div className="mt-6 w-full max-w-[700px]">
           <MyTabs activeTab={activeTab} setActiveTab={setActiveTab} />
           <AppPrimarySection>
-            {activeTab === '내 정보' ? <MyInfo /> : <MySetTrack />}
+            {activeTab === MY_TABS[0] ? <MyInfo /> : <MySetTrack />}
           </AppPrimarySection>
         </div>
       </div>
 
-      {/* 추천 버튼 */}
-      {/* <div className="flex justify-center mb-10">
-        <AppButton
-          label={loading ? '추천 중...' : '추천 완료'}
-          onClick={handleSubmit}
-          disabled={loading}
-        />
-      </div> */}
-
       <div className="flex justify-center mb-4">
-        {!progressResult && !interestResult ? (
-          <TrackInitButton onClick={handleSubmit} disabled={loading} />
-        ) : (
+        {recommended ? (
           <div className="text-center text-[#0259DD] font-semibold text-lg">
             추천 트랙을 확인해보세요!
           </div>
+        ) : (
+          <TrackInitButton onClick={handleRecommend} />
         )}
       </div>
 
       <div className="flex flex-col items-center gap-2 text-base font-medium">
-        {progressResult?.trackName && (
+        {recommended && (
           <div>
             🧠 이수율 기반 추천:{' '}
-            <span className="text-black">{progressResult.trackName}</span>
+            <span className="text-black">{recommended.trackName}</span>
           </div>
         )}
-        {interestResult?.trackName && (
-          <div>
-            🌟 관심 기반 추천:{' '}
-            <span className="text-black">{interestResult.trackName}</span>
-          </div>
+        {recommended === null && (
+          <p className="text-sm text-gray-500">
+            {trackData.length === 0
+              ? '홈에서 수강이력을 먼저 업로드해 주세요.'
+              : '아직 이수한 트랙 과목이 없어 추천할 트랙이 없습니다.'}
+          </p>
         )}
       </div>
-
-      {/* 로드맵 SVG 표시 */}
-      <div className="mt-25 flex justify-center">
-        // <TrackLoadMap className="w-full max-w-[1000px] h-auto" />
-      </div>
-
-      {/* 추천 결과 출력 */}
-      {/* {(progressResult || interestResult) && (
-        <div className="flex flex-col items-center gap-6 mb-20 text-lg font-semibold text-[#0259DD]">
-          {progressResult?.trackName && (
-            <div>🧠 이수율 기반 추천 트랙: <span className="text-black">{progressResult.trackName}</span></div>
-          )}
-          {interestResult?.trackName && (
-            <div>🌟 관심 기반 추천 트랙: <span className="text-black">{interestResult.trackName}</span></div>
-          )}
-        </div>
-      )} */}
     </div>
   );
 };

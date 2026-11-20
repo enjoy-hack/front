@@ -75,6 +75,20 @@ const TrackDataUploadModal = ({ onClose }) => {
           성적 엑셀다운로드 버튼을 클릭해 다운로드한 후, 해당 엑셀 파일을
           업로드합니다.
         </p>
+        <p className="mt-3 text-xs text-blue-600">
+          파일은 서버로 전송되지 않고 브라우저 안에서만 처리됩니다.
+        </p>
+        <p className="mt-1 text-xs text-gray-500">
+          성적 파일이 없다면{' '}
+          <a
+            href="/sample-transcript.xlsx"
+            download
+            className="text-blue-600 underline"
+          >
+            샘플 성적 파일
+          </a>
+          을 내려받아 올려 보세요. (가짜 데이터)
+        </p>
       </div>
 
       {/* 파일 선택 및 업로드 */}
