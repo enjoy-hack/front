@@ -1,12 +1,137 @@
-# React + Vite
+# 마이트랙
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+세종대학교 인공지능융합대학 트랙제 이수 관리 서비스입니다.
+학사정보시스템에서 내려받은 기이수 성적 엑셀을 올리면 8개 트랙별 이수 현황과 추천 트랙을 보여줍니다.
 
-Currently, two official plugins are available:
+- 데모: (Vercel 배포 후 링크 추가)
+- Storybook: (Chromatic 링크 추가)
+- 2025 제12회 세종대학교 SW/AI 해커톤 (2025.06.25 ~ 06.26) **장려상**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> 지금 버전은 서버 없이 브라우저만으로 동작합니다. 성적 파일과 개인정보는 어디로도 전송되지 않습니다.
+> 성적 파일이 없다면 업로드 창의 "샘플 성적 파일"(가짜 데이터)로 체험할 수 있습니다.
 
-## Expanding the ESLint configuration
+## 주요 기능
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. **체험하기**: 로그인 화면에서 버튼 하나로 들어갑니다. 포털 계정이 필요 없습니다.
+2. **수강이력 업로드**: 기이수 성적 엑셀(.xlsx)을 브라우저 안에서 읽어 트랙별 이수 과목과 남은 과목을 보여줍니다.
+3. **트랙 진척률**: 트랙마다 이수한 과목 수와 이수 기준(6과목) 대비 진행률을 표시합니다.
+4. **추천 트랙**: 마이페이지에서 진척률이 가장 높은 트랙을 추천합니다.
+5. **관심 트랙 설정**: 마이페이지에서 관심 트랙을 최대 4개 고릅니다.
+
+## 동작 방식
+
+```
+성적 엑셀 (.xlsx)
+  → read-excel-file로 첫 번째 시트를 2차원 배열로 읽기 (업로드할 때만 불러옴)
+  → parseTranscriptRows: 헤더 행에서 교과목명, 등급 열을 찾아 과목과 이수 여부 추출
+  → getCompletedCourseNames: 이수한 과목명 집합 (F, NP 제외, 이름 정규화)
+  → calculateTrackProgress: tracks.json의 8개 트랙과 비교해 TrackProgressDto[] 생성
+  → zustand 스토어 → 트랙 탭, 과목 목록, 진행 바, 추천
+```
+
+- 트랙과 과목 데이터는 백엔드 시드(`data.sql`)를 [scripts/convert-tracks.mjs](scripts/convert-tracks.mjs)로 변환한 [tracks.json](src/entities/track/data/tracks.json)입니다.
+- 계산 결과는 해커톤 때 백엔드가 돌려주던 응답과 같은 모양이라 화면 컴포넌트는 거의 그대로입니다.
+- 과목 비교는 공백, 전각 문자, 대소문자 차이를 무시하고, 구 과목명(`courseAlias`)으로 들은 과목도 이수로 봅니다.
+- 트랙 이수 기준 6과목은 서비스 소개 문구, 해커톤 프론트의 진행 바, 백엔드 DTO 주석을 근거로 정한 값입니다 (`REQUIRED_COURSE_COUNT`).
+
+## 팀
+
+| 이름 | 역할 |
+|---|---|
+| [남유성](https://github.com/meteorqz6) | 프론트엔드. 해커톤: 프로젝트 초기 설정, 라우팅, 홈과 마이페이지, API 연동. 이후: 협업 환경 정비, Storybook과 Chromatic 배포, 레이아웃 개편, 서버 없는 버전 전환 |
+| [강예령](https://github.com/ehlung) | 프론트엔드. 해커톤: 로그인, 스플래시, 트랙 소개 UI. 이후: FSD 구조 리팩터링, 컴포넌트별 스토리 작성 |
+| [김지우](https://github.com/Ji-Woo-Kim), [손다은](https://github.com/DaeunSon) | 백엔드 (Spring Boot), 세종 포털 로그인 |
+| [목예진](https://github.com/Vhime) | 디자인 |
+
+## 기술 스택
+
+- React 19, Vite 6, Tailwind CSS v4, zustand 5, react-router-dom 7
+- read-excel-file (브라우저 엑셀 파싱)
+- Vitest 3 (단위 테스트), Storybook 9 + Chromatic (컴포넌트 문서와 시각 테스트)
+- ESLint, Prettier, Husky + commitlint, CodeRabbit
+
+## 실행 방법
+
+Node.js 20 이상이 필요합니다.
+
+```bash
+npm ci
+npm run dev               # 개발 서버 http://localhost:5173
+npm test                  # 단위 테스트 (파싱, 진척률 계산, 샘플 파일)
+npm run test:storybook    # 스토리 렌더링 테스트 (처음 한 번 npx playwright install chromium)
+npm run storybook         # Storybook http://localhost:6006
+npm run build             # 운영 빌드
+```
+
+데이터를 다시 만들 때 (front 폴더에서):
+
+```bash
+node scripts/convert-tracks.mjs [data.sql 경로]   # 기본값 ../back/src/main/resources/data.sql
+node scripts/make-sample-transcript.mjs           # public/sample-transcript.xlsx (가짜 데이터)
+```
+
+## 폴더 구조 (FSD)
+
+```
+src/
+├─ app/        라우팅
+├─ pages/      login, splash, home, info(서비스 소개), my(마이페이지)
+├─ widgets/    헤더, 푸터
+├─ features/   track-management (업로드 모달, 트랙 탭과 과목 목록, 업로드 처리)
+├─ entities/   track (트랙 데이터, 파싱과 진척률 계산), course, user (zustand 스토어)
+├─ shared/     공용 버튼, 입력창, 라벨
+└─ stories/    Storybook 스토리
+scripts/       트랙 데이터 변환, 샘플 성적 파일 생성
+```
+
+## 해커톤 이후 개선 내역
+
+### 1. 협업 환경 정비 (2025.08 ~ 09)
+
+이슈와 PR 템플릿, Husky와 commitlint, CodeRabbit 리뷰, Storybook 도입과 PR마다 Chromatic 배포, Tailwind CSS v4 대응, FSD 구조 리팩터링, 레이아웃 개편.
+
+### 2. 서버 없이 동작하는 버전으로 전환 (2026.11)
+
+해커톤 뒤 서버(EC2)가 내려가면서 로그인부터 막혀 어떤 기능도 쓸 수 없었습니다. 점검해 보니 구조 자체에도 문제가 있었습니다.
+
+- 로그인 화면이 세종 포털 학번과 비밀번호를 평문 HTTP로 IP 주소 서버에 보냈습니다.
+- 서버 API는 인증 없이 학번만으로 다른 학생의 성적 데이터를 조회할 수 있었습니다.
+
+서비스에 필요한 계산(엑셀 파싱, 이수 판정, 추천)은 브라우저 안에서 충분히 할 수 있어서 프론트로 옮겼습니다.
+
+| 항목 | 개선 전 | 개선 후 |
+|---|---|---|
+| 끝까지 쓸 수 있는 사용자 흐름 | 없음 (로그인 불가 → 업로드 불가, 마이페이지 크래시) | 체험하기부터 업로드, 결과, 추천까지 E2E 14단계 통과 |
+| 외부로 보내는 개인정보 | 포털 비밀번호(평문), 성적 파일 | 없음 (외부 요청은 웹폰트 CSS 1건) |
+| 단위 테스트 | 0개 | 44개 (백엔드 버그 재현 18개 포함) |
+| 운영 의존성 취약점 (npm audit) | 12건 (critical 1, high 10) | 0건 |
+
+### 3. 테스트로 찾아 고친 버그
+
+백엔드 로직을 그대로 옮긴 뒤 실패하는 테스트를 먼저 작성했고(18개 중 16개 실패), 그다음 고쳤습니다. 커밋 기록에서 순서를 확인할 수 있습니다.
+
+| 문제 | 원인 | 수정 |
+|---|---|---|
+| D+, D0 등급이 하나라도 있으면 업로드 전체 실패 | 등급 매핑에 D가 없고, 모르는 등급이면 예외 | D 등급 이수 처리, 모르는 등급과 빈 칸은 그 행만 건너뛰고 경고 |
+| 빈 셀이나 숫자 셀에서 예외 | 셀을 항상 문자열로 읽음 | 셀 값을 안전하게 문자열로 변환, 헤더에서 열 위치 탐색 |
+| F 받은 과목도 이수로 집계 | 이수 과목을 모을 때 등급 상태를 거르지 않음 | F, NP 제외 |
+| `K-MOOC:생성형`과 `K-MOOC: 생성형`이 다른 과목으로 처리 | 과목명 완전 일치 비교 | 공백, 전각 문자, 대소문자 정규화 후 비교 |
+| Human-AI Interaction, AI 네트워킹이 어떤 트랙에도 안 잡힘 | 시드 데이터 오타 (`Human-Al`, `Al`: 대문자 I 대신 소문자 l) | 변환 스크립트에서 수정 |
+| 트랙 과목을 전부(10~12개) 들어야 이수 완료 | 필요 과목 수를 트랙 과목 수로 계산 | 이수 기준 6과목 상수 |
+| 이수 과목이 없어도 첫 번째 트랙을 추천 | 동률일 때 첫 항목 반환 | 이수 과목이 없으면 추천하지 않음 |
+
+### 4. 화면 버그와 정리
+
+- 마이페이지 진입 시 앱 전체가 사라지던 문제: 리팩터링 때 지워진 컴포넌트를 계속 쓰고 있었습니다. 컴포넌트를 복구하고, 이런 경우를 잡도록 `eslint-plugin-react` 규칙을 켰습니다 (설치만 되어 있고 꺼져 있었음).
+- 서비스 소개와 마이페이지에서 파란 글씨가 파란 바탕에 묻히던 문제 수정
+- 세 페이지에 복사돼 있던 트랙 탭 목록과 진행 바 분모 6 하드코딩을 트랙 데이터에서 가져오도록 변경
+- 쓰지 않는 파일(없는 모듈을 import하던 `apiClient.js`, 빈 검색 페이지) 삭제, `package.json`에 노출된 Chromatic 토큰 제거
+- 엑셀 라이브러리는 업로드할 때만 불러와 첫 화면 번들에서 분리
+- `vercel.json`으로 새로고침 시 404 방지
+
+## 알려진 한계
+
+- 새로고침하면 업로드 결과가 사라집니다. 다시 업로드하면 됩니다.
+- 실제 학사시스템 엑셀로는 검증하지 못했습니다. 백엔드가 쓰던 열 위치(4번 열 교과목명, 10번 열 등급)를 기본으로 하고, 헤더 행에 "교과목명", "등급"이 있으면 그 위치를 씁니다.
+- 해커톤 때의 관심 과목 기반 추천은 뺐습니다. 관심 과목을 등록하는 화면이 프론트에 없어 처음부터 입력이 들어갈 수 없던 기능입니다.
+- 개발 도구(Storybook 9, Vitest 3)에 남은 취약점은 메이저 버전 업그레이드가 필요해 이번 범위에서 제외했습니다. 배포 결과물에는 포함되지 않습니다.
