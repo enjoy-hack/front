@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import Logo from '../../assets/logo-character2.svg?react';
 import MyTrackHeader from '../../assets/mytrack-header.svg?react';
 // import TrackIcon from '../../assets/track.svg?react';
-// import SearchIcon from '../../assets/search.svg?react';
 // import MypageIcon from '../../assets/mypage.svg?react';
 
 function Header() {
@@ -25,9 +24,11 @@ function Header() {
               서비스 소개
             </span>
           </Link>
-          {/* <Link to="/search">
-            <SearchIcon className="w-6 h-6" />
-          </Link> */}
+          <Link to="/mypage">
+            <span className="inline-block text-white font-semibold hover:text-blue-light-3 hover:scale-103 transform transition-all">
+              마이페이지
+            </span>
+          </Link>
           <Link to="/login">
             <span className="inline-block text-white font-semibold hover:text-blue-light-3 hover:scale-103 transform transition-all">
               로그인
