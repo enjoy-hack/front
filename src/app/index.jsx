@@ -11,7 +11,6 @@ import Footer from '../widgets/navigation/Footer';
 import Home from '../pages/home';
 import TrackInfo from '../pages/info';
 import NotFound from '../pages/NotFound';
-import Search from '../pages/Search';
 import Splash from '../pages/splash';
 import Login from '../pages/login';
 import MyPage from '../pages/my';
@@ -42,7 +41,6 @@ function AppContent() {
           <Route path="/login" element={<Login />} />
           <Route path="/splash" element={<Splash />} />
           <Route path="/track" element={<TrackInfo />} />
-          <Route path="/search" element={<Search />} />
           <Route path="/mypage" element={<MyPage />} />
           {/* <Route path="/upload" element={<UploadSection />} /> */}
           <Route path="*" element={<NotFound />} />
