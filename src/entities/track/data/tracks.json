@@ -1,0 +1,688 @@
+[
+  {
+    "id": 1,
+    "name": "인공지능시스템",
+    "department": "컴퓨터공학과",
+    "courses": [
+      {
+        "courseName": "K-MOOC:모두를 위한 머신러닝",
+        "courseAlias": null,
+        "courseCode": "CS1001",
+        "academicYear": "2학년",
+        "academicSemester": "전학기"
+      },
+      {
+        "courseName": "K-MOOC: 생성형 인공지능 입문",
+        "courseAlias": null,
+        "courseCode": "CS1002",
+        "academicYear": "4학년",
+        "academicSemester": "전학기"
+      },
+      {
+        "courseName": "인공지능",
+        "courseAlias": null,
+        "courseCode": "CS3001",
+        "academicYear": "3학년",
+        "academicSemester": "2학기"
+      },
+      {
+        "courseName": "패턴인식",
+        "courseAlias": null,
+        "courseCode": "CS4001",
+        "academicYear": "4학년",
+        "academicSemester": "2학기"
+      },
+      {
+        "courseName": "Human-Al Interaction",
+        "courseAlias": "HCI 개론",
+        "courseCode": "CS4002",
+        "academicYear": "4학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "지능형 정보검색",
+        "courseAlias": "정보검색",
+        "courseCode": "CS4003",
+        "academicYear": "4학년",
+        "academicSemester": "2학기"
+      },
+      {
+        "courseName": "인공지능시스템",
+        "courseAlias": null,
+        "courseCode": "CS4004",
+        "academicYear": "4학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "지능형앱프로그래밍",
+        "courseAlias": null,
+        "courseCode": "CS3002",
+        "academicYear": "3학년",
+        "academicSemester": "2학기"
+      },
+      {
+        "courseName": "강화학습",
+        "courseAlias": null,
+        "courseCode": "CS4005",
+        "academicYear": "4학년",
+        "academicSemester": "2학기"
+      },
+      {
+        "courseName": "자연어처리",
+        "courseAlias": null,
+        "courseCode": "CS4006",
+        "academicYear": "4학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "고성능인공지능프로그래밍",
+        "courseAlias": null,
+        "courseCode": "CS4007",
+        "academicYear": "4학년",
+        "academicSemester": "2학기"
+      },
+      {
+        "courseName": "딥러닝",
+        "courseAlias": null,
+        "courseCode": "CS4008",
+        "academicYear": "3학년",
+        "academicSemester": "1학기"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "메타버스 플랫폼",
+    "department": "컴퓨터공학과",
+    "courses": [
+      {
+        "courseName": "K-MOOC:멀티미디어",
+        "courseAlias": null,
+        "courseCode": "CS1003",
+        "academicYear": "1학년",
+        "academicSemester": "2학기"
+      },
+      {
+        "courseName": "컴퓨터그래픽스",
+        "courseAlias": null,
+        "courseCode": "CS3003",
+        "academicYear": "3학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "디지털신호처리",
+        "courseAlias": null,
+        "courseCode": "CS3004",
+        "academicYear": "3학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "가상현실",
+        "courseAlias": null,
+        "courseCode": "CS4009",
+        "academicYear": "4학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "영상처리",
+        "courseAlias": null,
+        "courseCode": "CS4010",
+        "academicYear": "4학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "Human-Al Interaction",
+        "courseAlias": "HCI 개론",
+        "courseCode": "CS4002",
+        "academicYear": "4학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "웹기반시스템",
+        "courseAlias": null,
+        "courseCode": "CS3005",
+        "academicYear": "3학년",
+        "academicSemester": "2학기"
+      },
+      {
+        "courseName": "멀티코어프로그래밍",
+        "courseAlias": null,
+        "courseCode": "CS4011",
+        "academicYear": "4학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "컴퓨터비전",
+        "courseAlias": "컴퓨터비전시스템",
+        "courseCode": "CS4012",
+        "academicYear": "4학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "메타버스시스템",
+        "courseAlias": null,
+        "courseCode": "CS4013",
+        "academicYear": "4학년",
+        "academicSemester": "2학기"
+      },
+      {
+        "courseName": "메타버스데이터처리",
+        "courseAlias": null,
+        "courseCode": "CS4014",
+        "academicYear": "4학년",
+        "academicSemester": "2학기"
+      },
+      {
+        "courseName": "블록체인",
+        "courseAlias": null,
+        "courseCode": "CS4015",
+        "academicYear": "4학년",
+        "academicSemester": "2학기"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "클라우드 컴퓨팅",
+    "department": "컴퓨터공학과",
+    "courses": [
+      {
+        "courseName": "웹프로그래밍",
+        "courseAlias": null,
+        "courseCode": "CS2001",
+        "academicYear": "2학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "문제해결및실습: JAVA",
+        "courseAlias": null,
+        "courseCode": "CS2002",
+        "academicYear": "2학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "운영체제",
+        "courseAlias": null,
+        "courseCode": "CS3006",
+        "academicYear": "3학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "데이터베이스",
+        "courseAlias": null,
+        "courseCode": "CS3007",
+        "academicYear": "3학년",
+        "academicSemester": "2학기"
+      },
+      {
+        "courseName": "컴퓨터네트워크",
+        "courseAlias": null,
+        "courseCode": "CS3008",
+        "academicYear": "3학년",
+        "academicSemester": "2학기"
+      },
+      {
+        "courseName": "리눅스프로그래밍및실습",
+        "courseAlias": "Unix프로그래밍",
+        "courseCode": "CS3009",
+        "academicYear": "3학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "웹기반시스템",
+        "courseAlias": null,
+        "courseCode": "CS3005",
+        "academicYear": "3학년",
+        "academicSemester": "2학기"
+      },
+      {
+        "courseName": "XML프로그래밍",
+        "courseAlias": null,
+        "courseCode": "CS3010",
+        "academicYear": "3학년",
+        "academicSemester": "2학기"
+      },
+      {
+        "courseName": "무선통신",
+        "courseAlias": null,
+        "courseCode": "CS4016",
+        "academicYear": "4학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "정보보호개론",
+        "courseAlias": null,
+        "courseCode": "CS4017",
+        "academicYear": "4학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "지능형네트워크프로그래밍",
+        "courseAlias": "네트워크프로그래밍",
+        "courseCode": "CS4018",
+        "academicYear": "4학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "Al 네트워킹",
+        "courseAlias": null,
+        "courseCode": "CS4019",
+        "academicYear": "4학년",
+        "academicSemester": "2학기"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "공간비주얼 SW",
+    "department": "콘텐츠소프트웨어학과",
+    "courses": [
+      {
+        "courseName": "디지털이미지프로그래밍",
+        "courseAlias": "멀티미디어프로그래밍",
+        "courseCode": "CS2003",
+        "academicYear": "2학년",
+        "academicSemester": "2학기"
+      },
+      {
+        "courseName": "일반물리및시뮬레이션",
+        "courseAlias": null,
+        "courseCode": "CS2004",
+        "academicYear": "2학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "실시간컴퓨터그래픽스",
+        "courseAlias": "컴퓨터그래픽스",
+        "courseCode": "CS3011",
+        "academicYear": "3학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "응용수치해석및시각화",
+        "courseAlias": "수치해석",
+        "courseCode": "CS3012",
+        "academicYear": "3학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "실세계모델링 및렌더링",
+        "courseAlias": null,
+        "courseCode": "CS4020",
+        "academicYear": "4학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "컴퓨터애니메이션",
+        "courseAlias": null,
+        "courseCode": "CS4021",
+        "academicYear": "4학년",
+        "academicSemester": "2학기"
+      },
+      {
+        "courseName": "딥러닝개론",
+        "courseAlias": "인공지능",
+        "courseCode": "CS3013",
+        "academicYear": "3학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "가상현실",
+        "courseAlias": null,
+        "courseCode": "CS4009",
+        "academicYear": "4학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "컴퓨터비전및실습",
+        "courseAlias": "컴퓨터비전시스템",
+        "courseCode": "CS4022",
+        "academicYear": "4학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "생성형AI",
+        "courseAlias": null,
+        "courseCode": "CS4023",
+        "academicYear": "4학년",
+        "academicSemester": "2학기"
+      },
+      {
+        "courseName": "디지털트윈",
+        "courseAlias": null,
+        "courseCode": "CS4024",
+        "academicYear": "4학년",
+        "academicSemester": "2학기"
+      },
+      {
+        "courseName": "증강현실",
+        "courseAlias": null,
+        "courseCode": "CS4025",
+        "academicYear": "4학년",
+        "academicSemester": "2학기"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "인터렉티브 플랫폼",
+    "department": "콘텐츠소프트웨어학과",
+    "courses": [
+      {
+        "courseName": "객체지향프로그래밍:C++",
+        "courseAlias": "문제해결및실습:C++",
+        "courseCode": "SW2001",
+        "academicYear": "2학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "객체지향프로그래밍: JAVA",
+        "courseAlias": "문제해결 및실습: JAVA",
+        "courseCode": "SW2002",
+        "academicYear": "2학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "실시간컴퓨터그래픽스",
+        "courseAlias": "컴퓨터그래픽스",
+        "courseCode": "SW3001",
+        "academicYear": "3학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "객체지향XR 프로그래밍",
+        "courseAlias": null,
+        "courseCode": "SW3002",
+        "academicYear": "3학년",
+        "academicSemester": "2학기"
+      },
+      {
+        "courseName": "XR엔진개론",
+        "courseAlias": null,
+        "courseCode": "SW2003",
+        "academicYear": "2학년",
+        "academicSemester": "2학기"
+      },
+      {
+        "courseName": "웹기반프로그래밍",
+        "courseAlias": "웹프로그래밍",
+        "courseCode": "SW2004",
+        "academicYear": "2학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "딥러닝개론",
+        "courseAlias": "인공지능",
+        "courseCode": "SW3003",
+        "academicYear": "3학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "음성및오디오처리",
+        "courseAlias": "음성오디오처리",
+        "courseCode": "SW4001",
+        "academicYear": "4학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "생성형AI",
+        "courseAlias": null,
+        "courseCode": "SW4002",
+        "academicYear": "4학년",
+        "academicSemester": "2학기"
+      },
+      {
+        "courseName": "UI/UX디자인개론",
+        "courseAlias": null,
+        "courseCode": "SW2005",
+        "academicYear": "2학년",
+        "academicSemester": "2학기"
+      },
+      {
+        "courseName": "메타버스시스템",
+        "courseAlias": null,
+        "courseCode": "SW4003",
+        "academicYear": "4학년",
+        "academicSemester": "2학기"
+      },
+      {
+        "courseName": "HCI",
+        "courseAlias": "HCI개론",
+        "courseCode": "SW4004",
+        "academicYear": "4학년",
+        "academicSemester": "1학기"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "지능형에이전트",
+    "department": "인공지능데이터사이언스학과",
+    "courses": [
+      {
+        "courseName": "기계학습개론",
+        "courseAlias": null,
+        "courseCode": "SW3004",
+        "academicYear": "3학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "고급인공지능활용",
+        "courseAlias": null,
+        "courseCode": "SW4005",
+        "academicYear": "4학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "웹프로그래밍",
+        "courseAlias": null,
+        "courseCode": "SW2004",
+        "academicYear": "2학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "딥러닝실습",
+        "courseAlias": "파이썬기반딥러닝",
+        "courseCode": "SW3005",
+        "academicYear": "3학년",
+        "academicSemester": "2학기"
+      },
+      {
+        "courseName": "딥러닝개론",
+        "courseAlias": null,
+        "courseCode": "SW3003",
+        "academicYear": "3학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "시계열분석",
+        "courseAlias": "시계열분석및예측",
+        "courseCode": "SW4006",
+        "academicYear": "4학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "패턴인식",
+        "courseAlias": null,
+        "courseCode": "SW4007",
+        "academicYear": "4학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "자연어처리",
+        "courseAlias": null,
+        "courseCode": "SW4008",
+        "academicYear": "4학년",
+        "academicSemester": "2학기"
+      },
+      {
+        "courseName": "강화학습",
+        "courseAlias": null,
+        "courseCode": "SW4009",
+        "academicYear": "4학년",
+        "academicSemester": "2학기"
+      },
+      {
+        "courseName": "인공지능문제해결및실습",
+        "courseAlias": null,
+        "courseCode": "SW4010",
+        "academicYear": "4학년",
+        "academicSemester": "2학기"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "AI 콘텐츠",
+    "department": "인공지능데이터사이언스학과",
+    "courses": [
+      {
+        "courseName": "기계학습개론",
+        "courseAlias": null,
+        "courseCode": "AI3001",
+        "academicYear": "3학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "인공지능수학1,2",
+        "courseAlias": null,
+        "courseCode": "AI1001",
+        "academicYear": "1학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "디지털신호처리",
+        "courseAlias": null,
+        "courseCode": "AI3002",
+        "academicYear": "3학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "딥러닝실습",
+        "courseAlias": "파이썬기반딥러닝",
+        "courseCode": "AI3003",
+        "academicYear": "3학년",
+        "academicSemester": "2학기"
+      },
+      {
+        "courseName": "딥러닝개론",
+        "courseAlias": null,
+        "courseCode": "AI3004",
+        "academicYear": "3학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "영상처리",
+        "courseAlias": null,
+        "courseCode": "AI3005",
+        "academicYear": "3학년",
+        "academicSemester": "2학기"
+      },
+      {
+        "courseName": "컴퓨터그래픽스",
+        "courseAlias": null,
+        "courseCode": "AI3006",
+        "academicYear": "3학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "컴퓨터비전",
+        "courseAlias": null,
+        "courseCode": "AI4001",
+        "academicYear": "4학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "AR/VR/MR",
+        "courseAlias": null,
+        "courseCode": "AI4002",
+        "academicYear": "4학년",
+        "academicSemester": "2학기"
+      },
+      {
+        "courseName": "Human-Al Interaction",
+        "courseAlias": null,
+        "courseCode": "AI4003",
+        "academicYear": "4학년",
+        "academicSemester": "1학기"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "데이터인텔리전스",
+    "department": "인공지능데이터사이언스학과",
+    "courses": [
+      {
+        "courseName": "기계학습개론",
+        "courseAlias": null,
+        "courseCode": "AI3001",
+        "academicYear": "3학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "데이터분석개론",
+        "courseAlias": null,
+        "courseCode": "AI2001",
+        "academicYear": "2학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "딥러닝개론",
+        "courseAlias": null,
+        "courseCode": "AI3004",
+        "academicYear": "3학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "데이터베이스",
+        "courseAlias": null,
+        "courseCode": "AI3007",
+        "academicYear": "3학년",
+        "academicSemester": "2학기"
+      },
+      {
+        "courseName": "시계열분석",
+        "courseAlias": "시계열분석및예측",
+        "courseCode": "AI4004",
+        "academicYear": "4학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "딥러닝실습",
+        "courseAlias": "파이썬기반딥러닝",
+        "courseCode": "AI3003",
+        "academicYear": "3학년",
+        "academicSemester": "2학기"
+      },
+      {
+        "courseName": "데이터시각화",
+        "courseAlias": null,
+        "courseCode": "AI4005",
+        "academicYear": "4학년",
+        "academicSemester": "1학기"
+      },
+      {
+        "courseName": "설명가능한인공지능",
+        "courseAlias": null,
+        "courseCode": "AI4006",
+        "academicYear": "4학년",
+        "academicSemester": "2학기"
+      },
+      {
+        "courseName": "대용량데이터처리",
+        "courseAlias": null,
+        "courseCode": "AI4007",
+        "academicYear": "4학년",
+        "academicSemester": "2학기"
+      },
+      {
+        "courseName": "데이터문제해결및실습",
+        "courseAlias": null,
+        "courseCode": "AI4008",
+        "academicYear": "4학년",
+        "academicSemester": "2학기"
+      }
+    ]
+  }
+]
