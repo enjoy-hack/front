@@ -7,6 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
+    "test": "vitest run --project unit",
+    "test:storybook": "vitest run --project storybook",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
@@ -20,6 +22,7 @@
     "react-dom": "^19.1.0",
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.6.2",
+    "read-excel-file": "9.3.14",
     "vite-plugin-svgr": "^4.5.0",
     "vite-tsconfig-paths": "^5.1.4",
     "zustand": "^5.0.5"
@@ -56,6 +59,7 @@
     "storybook": "^9.1.2",
     "tailwindcss": "^4.1.12",
     "vite": "^6.3.5",
-    "vitest": "^3.2.4"
+    "vitest": "^3.2.4",
+    "write-excel-file": "4.1.1"
   }
 }

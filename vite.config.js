@@ -18,6 +18,15 @@ export default defineConfig({
   test: {
     projects: [
       {
+        // 순수 함수 단위 테스트 (엑셀 파싱, 트랙 진척률 계산 등). 브라우저 없이 node에서 실행
+        extends: true,
+        test: {
+          name: 'unit',
+          environment: 'node',
+          include: ['src/**/*.test.{js,jsx}', 'scripts/**/*.test.{js,mjs}'],
+        },
+      },
+      {
         extends: true,
         plugins: [
           // The plugin will run tests for the stories defined in your Storybook config
