@@ -1,27 +1,22 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import TrackStatus from '../../features/track-management/components/TrackStatus';
 import TrackIntroHeader from '../../features/track-management/components/TrackIntroHeader';
 import TrackDataUploadModal from '../../features/track-management/components/TrackDataUploadModal';
-import DeleteIcon from '../../assets/delete.svg';
-// import InfoList from '../../components/InfoList';
 import TrackTabs from '../../features/track-management/components/TrackTabs';
-
-const TABS = [
-  '인공지능시스템',
-  '메타버스 플랫폼',
-  '클라우드 컴퓨팅',
-  '공간비주얼 SW',
-  '인터렉티브 플랫폼',
-  '지능형에이전트',
-  'AI 콘텐츠',
-  '데이터인텔리전스',
-];
+import { TRACK_NAMES } from '../../entities/track';
+import useTrackStore from '../../entities/course/model/useTrackStore';
 
 const Splash = () => {
   const [step, setStep] = useState(1);
   const [showUpload, setShowUpload] = useState(false);
-  const [activeTab, setActiveTab] = useState(TABS[0]);
-  const handleCloseUpload = () => setShowUpload(false);
+  const [activeTab, setActiveTab] = useState(TRACK_NAMES[0]);
+  const navigate = useNavigate();
+  // 업로드에 성공해서 모달이 닫히면 결과를 볼 수 있는 홈으로 이동한다
+  const handleCloseUpload = () => {
+    setShowUpload(false);
+    if (useTrackStore.getState().trackData.length > 0) navigate('/home');
+  };
 
   useEffect(() => {
     const timer1 = setTimeout(() => setStep(2), 2000);
@@ -94,7 +89,7 @@ const Splash = () => {
 
             <div className="w-full max-w-[1200px] text-center mt-10">
               <TrackTabs
-                tabs={TABS}
+                tabs={TRACK_NAMES}
                 activeTab={activeTab}
                 onChange={setActiveTab}
               />

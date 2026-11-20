@@ -3,20 +3,10 @@ import TrackCourseList from '../../features/track-management/components/TrackCou
 import TrackStatus from '../../features/track-management/components/TrackStatus';
 import TrackDataUploadModal from '../../features/track-management/components/TrackDataUploadModal'; // 이전에 만든 TrackDataUploadModal 컴포넌트
 import { useState } from 'react';
-
-const TABS = [
-  '인공지능시스템',
-  '메타버스 플랫폼',
-  '클라우드 컴퓨팅',
-  '공간비주얼 SW',
-  '인터렉티브 플랫폼',
-  '지능형에이전트',
-  'AI 콘텐츠',
-  '데이터인텔리전스',
-];
+import { TRACK_NAMES } from '../../entities/track';
 
 const Home = () => {
-  const [activeTab, setActiveTab] = useState(TABS[0]);
+  const [activeTab, setActiveTab] = useState(TRACK_NAMES[0]);
   const [showUpload, setShowUpload] = useState(false);
 
   // 모달을 닫는 함수
@@ -33,7 +23,7 @@ const Home = () => {
       <div className="w-full mx-auto flex justify-center mt-12">
         <div>
           <TrackTabs
-            tabs={TABS}
+            tabs={TRACK_NAMES}
             activeTab={activeTab}
             onChange={setActiveTab}
           />

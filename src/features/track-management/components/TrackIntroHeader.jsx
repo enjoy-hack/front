@@ -22,7 +22,7 @@ function TrackIntroHeader() {
 
       {/* 제목 */}
       <h1 className="text-2xl font-semibold text-blue-600 mb-6">
-        안녕하세요! {studentName}님
+        안녕하세요!{studentName && ` ${studentName}님`}
         <br />
         ‘트랙제’에 대해 알아볼까요?
       </h1>

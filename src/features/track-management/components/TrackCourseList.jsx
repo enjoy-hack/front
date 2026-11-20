@@ -52,10 +52,10 @@ const TrackCourseList = ({ activeTrack }) => {
     <div className="w-full bg-[#0259DD] rounded-bl-lg rounded-br-lg p-6 flex flex-col items-center -mt-1 z-0 relative">
       <div className="w-full flex justify-between items-center mb-4">
         {/* 트랙 데이터 업로드 모달 컴포넌트 */}
-        {/* 이수 개수/총 과목 수(고정: 6)를 헤더에 전달해 진행률과 요약 텍스트 표시 */}
+        {/* 이수 개수와 이수 기준 과목 수(트랙 데이터의 requiredCount)를 헤더에 전달해 진행률과 요약 텍스트 표시 */}
         <TrackProgressHeader
           completedCount={completedCourses.length}
-          total={6}
+          total={current.requiredCount}
           hasData={true}
         />
       </div>
