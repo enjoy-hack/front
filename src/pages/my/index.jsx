@@ -25,7 +25,7 @@ const MyPage = () => {
   };
 
   return (
-    <div className="w-full mx-auto my-8 px-4">
+    <div className="w-full mx-auto p-8 min-h-[75vh] bg-white rounded-tl-[150px] rounded-br-[150px]">
       {/* 상단 */}
       <div className="flex flex-col items-center mb-10">
         <TrackStatus

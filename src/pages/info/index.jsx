@@ -7,7 +7,7 @@ const TrackInfo = () => {
   const [activeTab, setActiveTab] = useState(TRACK_NAMES[0]);
 
   return (
-    <div className="p-8 flex justify-center">
+    <div className="p-8 flex justify-center min-h-[75vh] bg-white rounded-tl-[150px] rounded-br-[150px]">
       <div className="w-full max-w-[1200px] text-center">
         <div className="mb-16">
           <TrackIntroHeader />
